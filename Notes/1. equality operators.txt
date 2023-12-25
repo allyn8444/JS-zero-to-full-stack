@@ -1,0 +1,19 @@
+EQUALITY OPERATORS
+
+===  _strict equality operator; scans value and data type
+          console.log(10 === "10"); // FALSE
+          console.log(10 === 10) // TRUE
+
+
+!==  _strict non-equality operator; scans value and data type
+          console.log(10 !== 10); // FALSE
+          console.log(10 !== "10"); // TRUE
+
+
+==   _lose equality operator; only scans the value
+          console.log(10 == "10"); // TRUE
+          console.log(10 == 10); // TRUE
+
+!=   _lose not equality operator; only scans the value
+          console.log(10 != 10); // FALSE
+          console.log(10 != "10"); // FALSE
