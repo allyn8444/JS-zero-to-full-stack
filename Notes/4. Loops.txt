@@ -1,0 +1,127 @@
+LOOPS
+-used to execute a group of instructions or a block of code multiple times, without writing it repeatedly.
+
+DRY -> Don't Repeat Yourself
+
+* ========= F O R - L O O P ============== *
+
+SYNTAX:
+for(initialValue; condition; increment/decrement){
+     // code here
+}
+
+example:
+for (let i = 0; i < 5; i++) {
+  console.log("i value: " + i);
+}
+
+output:
+i value: 0
+i value: 1
+i value: 2
+i value: 3
+i value: 4
+
+======== Post and Pre Increment/Decrement
+
+Logic:
+
+let a = 1;
+
+Pre-increment:
+console.log(++a); // 2
+
+console.log(a); // 2
+
+Post-increment:
+console.log(a++); // 2
+
+console.log(a); // 3
+
+
+
+Decrement:
+let j;
+for (j = 5; j >= 1; j--) {
+  console.log("j current value is: " + j);
+}
+
+
+
+====== LOOPS IN ARRAY:
+let array = ["a", "b", "c", "d"];
+
+for (let index = 0; index < array.length; index++) {
+  console.log(array[index]);
+}
+
+
+* ========= N E S T E D - F O R - L O O P ============== *
+
+
+
+&nbsp; means non-breaking space
+
+//pyramid
+for (let row = 1; row <= 10; row++) {
+  for (let space = 10; space > row; space--) {
+    document.write("&nbsp;&nbsp;");
+  }
+  for (let col = 1; col <= row; col++) {
+    document.write("&nbsp;*&nbsp;");
+  }
+
+  document.write(" <br>");
+}
+
+
+
+* ========= W H I L E - L O O P ============== *
+
+Syntax:
+
+while(condition){
+     // code to be executed
+}
+
+the code inside the brackets will continue to run until the condition falsify;
+meaning if it is true, it will run infinitely
+
+
+avoid making an infinite while loop as it will eat your memory, possibly will make your browser lag. xD
+
+EXAMPLE:
+
+let condition = true;
+let i = 1;
+while (condition) {
+  console.log(i);
+  if (i === 10) {
+    condition = false;
+  }
+  i++;
+}
+
+
+* ========= D O - W H I L E - L O O P ============== *
+
+
+same concept as the while loop, however as the name implies, it will perform the "do" first before reading the conditional in the "while"
+
+Syntax:
+
+do{
+     // code to be executed
+} while (conditional);
+
+
+EXAMPLE:
+
+let i = 1;
+do {
+  console.log("number is:", i);
+  i++;
+} while (i <= 5);
+
+
+-I usually use do-while loops for checking user inputs

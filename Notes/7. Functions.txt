@@ -1,0 +1,160 @@
+* ========= F U N C T I O N S ============== *
+
+- a function is a block of code that performs a specific task
+- function makes a code reusable. You can declare it multiple times.
+- function makes your code easier to maintain as it divides the tasks into smaller tasks
+- function increases readability
+- DRY -> Don't Repeat Yourself
+
+
+SYNTAX:
+
+function name(parameter){
+     // code to be executed
+}
+
+-parameters are only optional
+
+
+* ========= C A L L I N G - F U N C T I O N S ============== *
+
+
+In order to make your function functional, you need to call it.
+You can call it by:
+name()
+
+EXAMPLE:
+
+function greet() {
+  console.log("Hello User!");
+}
+
+greet(); // Hello User!
+
+
+NOTE: You can call your function multiple times!
+
+
+
+* ========= P A R A M E T E R S - & - A R G U M E N T S ============== *
+
+FUNCTION DECLARATION:
+
+function sayHello(user){
+     console.log(`Hello ${user}!`)
+}
+
+
+Calling your function with a parameter is kinda different from without a parameter.
+This is how you call your function with a paraneter:
+
+sayHello("Allyn")
+
+-so we passed in data inside our function.
+- this is called an "Argument"
+
+output:
+Hello Allyn!
+
+* ========= D E F A U L T - P A R A M E T E R S ============== *
+
+
+Another thing is parameters can have a default value.
+
+function moodToday(mood = "Good") {
+  console.log(`I feel ${mood} today.`);
+}
+
+- So as you can see, we declared a value in our parameter. That is called the default parameter value
+- if user will not pass any argument in our function call, the default parameter value will be used.
+
+
+moodToday(); // I feel Good today.
+moodToday("Bad"); // I feel Bad today.
+
+
+
+* ========= R E T U R N S - in - F U N C T I O N ============== *
+
+
+- The return statement can only be used within function bodies.
+- When a return statement is used in a function body, the execution of the function is stopped.
+- The return statement has different effects when placed in different functions:
+- In a plain function, the call to that function evaluates to the return value.
+
+
+EXAMPLE:
+
+function add(a, b) {
+  return a + b;
+}
+
+add(1, 2);
+
+
+- by running the code above, you wont see any output in the console. Why?
+- return value are just stored unless you need to use it.
+- it is typically stored in a variable for later use.
+
+for example:
+
+let sum = add(1, 2);
+console.log(sum); // 3
+
+
+
+* ========= function -  D E C L A R A T I O N - vs - E X P R E S S I O N ============== *
+
+
+
+Function Declaration:
+
+- Defined using the function keyword followed by a function name.
+- Can be declared anywhere in the code, as JavaScript hoists function declarations
+     to the top of the current scope during the compilation phase.
+- The entire function is hoisted, so it can be called before the declaration in the code.
+- Can be used for both named and anonymous functions.
+
+
+Function Expression:
+
+- Defined by assigning a function to a variable using the var, let, or const keyword.
+- Must be defined before it is called; otherwise, a reference error will occur.
+- Only the variable declaration is hoisted, not the entire function definition.
+- Can be used for anonymous functions or named functions (when the function has a name).
+
+
+Example of Function Declaration:
+
+function say(user){
+     console.log(`Hello ${user}`)
+}
+
+
+Example Function Expression:
+
+let greetings = function(user){
+     console.log(`Greetings, ${user}!`)
+}
+
+
+* ========= C A L L B A C K - F U N C T I O N S ============== *
+
+
+Callback functions in JavaScript are functions that are passed as arguments to other functions and are executed later;
+often after the completion of an asynchronous operation.
+
+
+This is how you perform a callback function:
+
+function shout(name, callback) {
+  console.log(`${name}, this is the main function.`);
+  callback();  // <---- as if you are calling a function
+}
+
+
+function iAmCallback() {
+  console.log("I am a callback function!");
+}
+
+shout("allyn", iAmCallback); // <--- only pass in the function name; dont call it

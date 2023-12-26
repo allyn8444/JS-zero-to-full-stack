@@ -1,0 +1,114 @@
+* ========= A R R A Y S ============== *
+
+- used to store multiple values of specific subject
+- we are using square braces/brackets
+
+Empty Array:
+const myArray = [];
+
+Array example:
+let numbers = [1,2,3,4,5];
+
+====== INDEX:
+-index starts at zero means the number in our array is equal to index of zero.
+
+value - index
+1         0
+2         1
+3         2
+4         3
+5         4
+
+
+======= LENGTH:
+-length refers to the number of values stored inside an array
+
+EXAMPLE:
+
+let names = ["ashley", "allyn", "maxine"];
+console.log(names); // [ "ashley", "allyn", "maxine" ]
+console.log(names.length); // 3
+
+
+==== ACCESSING ARRAY VALUES BASED ON INDEX
+
+
+let names = ["ashley", "allyn", "maxine"];
+
+index: value
+0: "ashley"
+1: "allyn"
+2: "maxine"
+
+-with that idea in mind, we should be able to access the array values using their indexes
+
+console.log(names[0]);  // ashley
+
+
+* ========= N E S T E D - A R R A Y S ============== *
+
+-nested arrays means an array within an array
+
+let data = ["allyn", ["tigbauan", "iloilo"], "single"];
+console.log(data);
+
+OUTPUT:
+0: "allyn"
+1: Array [ "tigbauan", "iloilo" ]
+2: "single"
+
+
+console.log(data[1]); // [ "tigbauan", "iloilo" ]
+
+-To access the data inside the nested array, you need to think as if it is 2 Dimensional
+You need to locate the array inside the array (like what I did above) then locate the data you want inside that nested array.
+Like this:
+
+console.log(data[1][0]); //  tigbauan
+
+
+
+* ========= O B J E C T S - W I T H I N - A R R A Y S ============== *
+
+
+Objects are composed of key-value pairs
+
+EXAMPLE:
+const info = [{ name: "allyn" }, { age: 17 }, { birthMonth: "september" }];
+
+-to access the first data in the array, same as usual, we can do this:
+
+console.log(info[0]); // {name: "allyn"}
+
+
+-in our example, the key is the 'name' and the value is "allyn"
+so to access the value "allyn" we can do this:
+
+console.log(info[0].name); // allyn
+
+
+
+
+
+* ========= A R R A Y - M E T H O D S ============== *
+
+
+Visit link for more info: https://www.w3schools.com/js/js_array_methods.asp
+
+Below are some array method:
+
+Array.length
+-The length property returns the length (size) of an array
+
+Array.pop()
+-The pop() method removes the last element from an array
+
+Array.push()
+-The push() method adds a new element to an array (at the end)
+
+Array.shift()
+-The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+
+Array.unshift()
+-The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements

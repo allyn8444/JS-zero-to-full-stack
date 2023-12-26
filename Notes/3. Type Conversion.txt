@@ -1,0 +1,65 @@
+TYPE CONVERSION
+
+let money = "50";
+console.log(typeof money); // string
+
+typeof returns the data type of the passed in variable (or value)
+
+
+* ========= S T R I N G - T O - I N T E G E R ============== *
+
+So far, I know 3 ways to convert a string to an integer:
+     1. parseInt()
+     2. variable =  +variable
+     3. Number() constructor
+
+1.
+let money = "50";
+money = parseInt(money);
+console.log(typeof money); // number
+
+2.
+money = +money;
+console.log(typeof money); // number
+
+3.
+money = Number(money);
+console.log(typeof money); // number
+
+
+* ========= I N T E G E R - T O - S T R I N G ============== *
+
+
+So far, I know 2 ways to convert an integer to a string.
+     1. .toString()
+     2. String() constructor
+
+
+let money = 50;
+console.log(typeof money); // number
+
+1.
+money = money.toString();
+console.log(typeof money); // string
+
+2.
+money = String(money);
+console.log(typeof money); // string
+
+
+* ========= S T R I N G - T O - D E C I M A L ============== *
+
+
+So far, I know 2 ways to convert a string to a decimal.
+     1. parseFloat()
+     2. numb = +numb
+
+
+let str = "3.14";
+console.log(typeof str); // string
+
+str = parseFloat(str);
+console.log(typeof str); // number
+
+str = +str;
+console.log(typeof str); // number

@@ -1,0 +1,78 @@
+* ========= O B J E C T S ============== *
+
+An object is a collection of properties, and a property is an association between a name (or key) and a value. 
+A property's value can be a function, in which case the property is known as a method. 
+-we are using curly braces/brackets
+
+key : value EXAMPLE:
+name : "allyn",
+age : 17,
+status: "single",
+address : "Iloilo",
+
+SYNTAX:
+
+let/const variableName = {
+     key: value
+}
+
+-value can be any data type
+
+For example:
+
+const data = {
+  name: "allyn",
+  age: 17,
+  status: "single",
+  address: "Iloilo",
+  subjects: ["Programming", "Math"],
+};
+
+console.log(data); //  { name: "allyn", age: 17, status: "single", address: "Iloilo", subjects: (2) […] }
+
+
+* ========= A C C E S S - V A L U E - O F - K E Y ============== *
+
+SYNTAX:
+variableName.key
+
+Example:
+console.log(data.name) // allyn
+console.log(data.age) // 17
+console.log(data.subjects[0]); // Programming
+
+
+
+* ========= ADD & DELETE - KEY VALUE PAIRS - I N - E X I S T I N G - O B J E C T ============== *
+
+===== ADD or to update: 
+
+SYNTAX:
+variableName.key = value;
+
+
+const person = {
+  firstName: "Juan",
+};
+console.log(person); // { firstName: "Juan" }
+
+
+ADD NEW KEY-VALUE PAIR:
+person.lastName = "Tamad";
+console.log(person); // { firstName: "Juan", lastName: "Tamad" }
+
+
+UPDATE KEY-VALUE PAIR:
+person.firstName = "Allyn";
+console.log(person); // { firstName: "Allyn", lastName: "Tamad" }
+
+===== DELETE:
+
+SYNTAX:
+delete variableName.key;
+
+
+Example:
+
+delete person.firstName;
+console.log(person); // { lastName: "Tamad" }
