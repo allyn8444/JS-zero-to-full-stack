@@ -1,0 +1,68 @@
+* ========= J S O N ============== *
+
+- JSON stands for JavaScript Object Notation
+- uses .json as file extension
+- a lightweight data interchange format
+- a text-based format that is easy for humans to read and write and easy for machines to parse and generate
+- often used to transmit data between a server and a web application, as well as to store and exchange data.
+
+SYNTAX:
+
+- JSON data is represented as key-value pairs, similar to JavaScript object literals.
+
+- Data is stored in name/value pairs, where the names (also called keys) are strings,
+     and the values can be strings, numbers, objects, arrays, booleans, or null.
+
+- JSON uses a specific syntax, and its data is enclosed in curly braces {} for objects
+     and square brackets [] for arrays.
+
+
+EXAMPLE:
+- in our data.json file
+
+{
+  "name": "John Doe",
+  "age": 25,
+  "isStudent": false,
+  "courses": ["Math", "History", "English"],
+  "address": {
+    "city": "New York",
+    "zipCode": "10001"
+  }
+}
+
+
+
+* ========= C O N V E R T I N G - OBJECT - T O - JSON ============== *
+
+JSON.stringify() method
+- converts a JavaScript object to a JSON string
+
+
+EXAMPLE:
+
+Object:
+let person = { name: "John", age: 30, city: "New York" };
+
+To JSON:
+let jsonPerson = JSON.stringify(person);
+
+console.log(jsonPerson); // {"name":"John","age":30,"city":"New York"}
+
+
+
+* ========= C O N V E R T I N G - JSON - T O - OBJECT ============== *
+
+JSON.parse() method
+- converts a JSON string to a JavaScript object
+
+
+EXAMPLE:
+
+JSON:
+let jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+
+To Object:
+let personObject = JSON.parse(jsonString);
+
+console.log(personObject); // Object { name: "John", age: 30, city: "New York" }

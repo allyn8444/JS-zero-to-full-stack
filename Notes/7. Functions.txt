@@ -158,3 +158,91 @@ function iAmCallback() {
 }
 
 shout("allyn", iAmCallback); // <--- only pass in the function name; dont call it
+
+
+
+* ================ A R R O W - F U N C T I O N S =============== *
+
+
+- Arrow functions in JavaScript are a concise way to write function expressions.
+- They were introduced in ECMAScript 6 (ES6) and provide a more compact syntax compared to traditional function expressions.
+- Arrow functions have a shorter syntax, do not bind their own `this` (this keyword will be explained later),
+     and do not have their own arguments object.
+
+
+===== TRADITIONAL vs ARROW Function:
+
+-Traditional function expression:
+const add = function(x, y) {
+  return x + y;
+};
+
+
+-Arrow function equivalent:
+const addArrow = (x, y) => x + y;
+
+
+====== FEATURES OF ARROW FUNCTIONS
+
+
+SYNTAX:
+- Arrow functions have a concise syntax with an arrow => between the parameters and the function body.
+
+
+NO `this` BINDING:
+- Arrow functions do not have their own `this` context.
+- Instead, they inherit the `this` value from the surrounding scope in which they are defined.
+- This behavior can be advantageous in certain situations, especially when working with callbacks and event handlers
+
+EXAMPLE:
+
+
+-Arrow function:
+const counterArrow = {
+  count: 0,
+  start: function () {
+    setInterval(() => {
+      // 'this' refers to the 'counterArrow' object
+      this.count++;
+      console.log("Arrow Function Count:", this.count);
+    }, 1000);
+  },
+};
+
+counterArrow.start();
+
+
+-Traditional function expression:
+- Not working as intended
+const counterTraditional = {
+  count: 0,
+  start: function () {
+    setInterval(function () {
+      // 'this' would refer to the global object (or undefined in strict mode)
+      // because it's a regular function expression
+      this.count++;
+      console.log("Traditional Function Count:", this.count); // returns: NaN
+    }, 1000);
+  },
+};
+
+counterTraditional.start();
+
+
+
+
+IMPLICIT RETURN:
+- Arrow functions with a single statement automatically return the result of that statement without needing the `return` keyword
+EXAMPLE:
+const square = x => x * x; // Implicit return
+
+whereas in traditona function, you need to do:
+
+function square(x){
+     return x * x;
+}
+
+
+
+
+

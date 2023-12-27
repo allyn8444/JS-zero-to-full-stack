@@ -1,0 +1,84 @@
+* ===================== setInterval() ================== *
+
+- The setInterval() method calls a function at specified intervals (in milliseconds).
+- setInterval() goes on forever.
+- 1 second = 1000 milLiseconds
+
+SYNTAX:
+
+setInterval(function, milliseconds)
+
+EXAMPLE:
+
+setInterval(() => {
+  console.log("i will run every x seconds");
+}, 2000);
+
+- code above will print the message ever 2 seconds (2000 milliseconds = 2secs)
+
+
+
+* =====================  setTimeout() ==================== *
+
+- The setTimeout() method calls a function after a number of milliseconds.
+- think of it as the delay when executing a function
+- 1 second = 1000 milLiseconds
+- The setTimeout() is executed only once.
+
+
+SYNTAX:
+
+setTimeout(function, milliseconds);
+
+
+EXAMPLE:
+
+setTimeout(() => {
+  console.log("This message will be printed after 5 seconds");
+}, 5000);
+
+- code above will print after 5 seconds (5000 milliseconds = 5secs)
+
+
+
+
+* =====================  clearTimeout() ==================== *
+
+- the clearTimeout() function is used to cancel a scheduled timeout set by
+     the setTimeout() function before the specified function is executed.
+- It takes the timeout ID returned by setTimeout() as its argument.
+
+
+SYNTAX:
+
+clearTimeout(timeoutID);
+
+
+EXAMPLE:
+
+function sayHello() {
+  console.log("Hello, World!");
+}
+
+// Schedule the sayHello function to execute after 2000 milliseconds (2 seconds)
+const timeoutID = setTimeout(sayHello, 2000);
+
+// Cancel the scheduled timeout before it executes
+clearTimeout(timeoutID);
+
+
+ANOTHER EXAMPLE:
+
+const intervalId = setInterval(() => {
+  console.log(
+    "This anonymous function is executed in the interval of 2 seconds"
+  );
+}, 2000);
+
+// Stops the interval after 10 seconds
+setTimeout(() => {
+  clearTimeout(intervalId);
+  console.log("Interval Stopped!");
+}, 10000);
+
+

@@ -1,0 +1,129 @@
+* ============== E N H A N C E D - O B J E C T - L I T E R A L S ============= *
+
+- introduced in ECMAScript6 (ES6)
+- are set of enhancements to syntax for defining objects in  JS
+- these enhancements make it more convenient and concise to define object properties and methods
+- THINK OF IT AS THE BETTER WAY OF WORKING WITH OBJECTS
+
+
+RUN THIS CODE FOR BETTER EXPLANATIONS:
+
+
+
+====== ATTRIBUTE DECLARING ======
+
+
+console.log("Es5 attribute declaring")
+// In Es5 you need to enter both object key and variable key which hold value
+var name="one"
+var age=25
+var salary=3500
+var emp={
+    name:name,
+    age:age,
+    salary:salary
+}
+console.log(emp)
+
+console.log("Es6 attribute declaring")
+// In Es6 you can enter both object and variable key at once
+let name1="two"
+let age1=26
+let salary1=5500
+
+let emp1={
+    name1,
+    age1,
+    salary1
+}
+console.log(emp1)
+
+
+
+
+=========  METHOD DECLARING =======
+
+
+console.log("Es5 method declaring")
+// In Es5 you need to enter keyword function for declaring function inside object
+var name="one"
+var emp={
+    name:name,
+    showName: function(){
+        console.log(`Hello ${name}, Welcome to this company`)
+    }
+}
+console.log(emp)
+emp.showName()
+
+console.log("Es6 method declaring")
+// In Es6 you dont need to enter keyword for function
+let name1="two"
+let emp1={
+    name1,
+    showName(){
+        console.log(`Hello ${name1}, Welcome to this company`)
+    }
+}
+console.log(emp1)
+emp1.showName()
+
+
+
+=========  ATTRIBUTE & METHOD DECLARING =======
+
+console.log("Es6 attribute and method declaring")
+// You can directly enter attribute and method name inside object
+let name="one"
+let showName=()=>{ console.log(`Hello ${name}, Welcome to this company`) }
+let emp={
+    name,
+    showName
+}
+console.log(emp)
+emp.showName()
+
+
+
+
+======== FUNCTION RETURNING AN OBJECT =========
+
+
+console.log("Es5, to return as object")
+// In Es5 for returning you need to enter both object key name and value key
+function emp(){
+    var name="one";
+    var age=25;
+    return {name:name,age:age}
+}
+console.log(emp())
+
+console.log("Es6, to return as object")
+// In Es6 if you enter object key, it will takes with value
+
+function emp1(){
+    let name="one";
+    let age=25;
+    return {name,age}
+}
+console.log(emp1())
+
+
+
+========= ES6 OBJECT DECLARED USING AN ARRAY =========
+
+
+console.log("Es6 object declared using array")
+// Dynamic object creation using shift()
+let properties=["name","age","salary"]
+let emp1=["one",27,3500]
+
+let emp1_detail={
+    [properties.shift()]:emp1.shift(),
+    [properties.shift()]:emp1.shift(),
+    [properties.shift()]:emp1.shift(),
+}
+console.log(emp1_detail)
+
+
+
