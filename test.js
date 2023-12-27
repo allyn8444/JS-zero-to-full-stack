@@ -1,6 +1,4 @@
 /* 
-
+problem is fixed now
 
 */
-
-console.log("still not update");
