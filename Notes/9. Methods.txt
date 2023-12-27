@@ -1,0 +1,59 @@
+* ========= M E T  H O D S ============== *
+
+- In JavaScript, methods are functions that are associated with objects.
+- They are essentially functions that are properties of objects. 
+- When a function is a property of an object, it is referred to as a method of that object.
+- Methods are invoked on objects and can perform actions or provide information related to the object's state.
+
+
+So far, I know 3 different ways to declare a method in an Object.
+
+1. Method shorthand:
+say() {
+    return "This is a say() method";
+  }
+
+
+2. Reference to an External Function:
+walk
+
+then declare the function outside the object, like this:
+function walk() {
+  return "I am walking";
+}
+
+
+3. Traditional Function Expression:
+hello: function () {
+    console.log("Hello everyone!");
+  },
+
+
+
+EXAMPLE:
+
+let person = {
+  name: "Allyn",
+  age: 17,
+  working: false,
+  subjects: ["Computing", "Programming"],
+  // this the say() method
+  say() {
+    return "This is a say() method";
+  },
+  // 2nd way of making a method
+  walk,
+  // 3rd way of making a method
+  hello: function () {
+    console.log("Hello everyone!");
+  },
+};
+
+function walk() {
+  return "I am walking";
+}
+
+// call the methods
+console.log(person.say());
+console.log(person.walk());
+person.hello();

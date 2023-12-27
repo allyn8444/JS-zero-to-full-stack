@@ -1,0 +1,29 @@
+* ========= S C O P E S ============== *
+
+- Scope in JS refers to the current context of code,
+     which determines the accessibility of variables.
+
+- There are two types of scope in JS; global and local scopes.
+
+- Global Scopes are those declared outside blocks. It has a free scope and are accessible throughout
+     the entire program, including within functions.
+- Local Scope variables are declared inside blocks, for example inside a function. These kind of
+     variables can be only accessed inside the block. Accessing it outside its block will cause an error.
+
+
+EXAMPLE:
+
+let globalMsg =
+  "This is globally because this is free, not inside a function or anything.";
+
+function say() {
+  let localMsg = "this is a local message. Local to the say() function";
+  console.log(localMsg);
+
+  // you can call any global variables inside a function (local)
+  console.log(globalMsg);
+}
+say();
+
+// since the localMsg variable is local to its function, you can not access it outside the say() function
+console.log(localMsg); // This will throw an Error
