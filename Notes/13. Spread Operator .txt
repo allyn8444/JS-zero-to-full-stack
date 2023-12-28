@@ -1,0 +1,164 @@
+* ============== S P R E A D - O P E R A T O R ============= *
+
+- is a new addition to the set of operators in JS ES6
+- it takes an iterable (e.g. Array, Object etc.) and EXPANDS it into individual elements
+- is commonly used to make shallow copies of JS Objects
+- using spread operator makes the code concise and enhances its readability.
+
+
+Learn how to use the three dots operator (...) a.k.a the spread operator in JavaScript.
+
+
+EXAMPLE:
+
+
+function giveMe4(a, b, c, d) {
+  console.log("a", a);
+  console.log("b", b);
+  console.log("c", c);
+  console.log("d", d);
+}
+giveMe4(1, 2, 3, 4);
+
+
+output:
+a  1
+b  2
+c  3
+d  4
+
+
+----
+
+
+===== HOW ABOUT?
+
+
+function giveMe4(a, b, c, d) {
+  console.log("a", a);
+  console.log("b", b);
+  console.log("c", c);
+  console.log("d", d);
+}
+
+const colors = ["red", "green", "blue", "violet"];
+
+giveMe4(colors);
+
+
+output:
+
+a > Array(4) [ "red", "green", "blue", "violet" ]
+b undefined
+c undefined
+d undefined
+
+
+
+===== HOW CAN WE FIX THIS?
+
+-YES, you are right! By using the triple dots aka the spread operator!
+
+
+function giveMe4(a, b, c, d) {
+  console.log("a", a);
+  console.log("b", b);
+  console.log("c", c);
+  console.log("d", d);
+}
+
+const colors = ["red", "green", "blue", "violet"];
+
+// By adding the spread operator we can come up with different output.
+giveMe4(...colors);
+
+
+output:
+a  red
+b  green
+c  blue
+d  violet
+
+
+
+* ============== W E - C A N - U S E - T O - C O N C A T ============= *
+
+The spread operator allows us to quickly copy all or parts of an existing array into another array:
+
+
+let firstNumbs = [1, 2, 3, 4, 5];
+let secondNumbs = [6, 7, 8, 9, 10];
+let allNumbs = [...firstNumbs, ...secondNumbs];
+
+console.log(allNumbs); // Array(10) [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+
+
+The same idea goes if used in an JS Object.
+
+const myVehicle = {
+  brand: "Ford",
+  model: "Mustang",
+  color: "red",
+};
+
+const updateMyVehicle = {
+  type: "car",
+  year: 2021,
+  color: "yellow",
+};
+
+const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
+console.log(myUpdatedVehicle);
+
+output: 
+> Object { brand: "Ford", model: "Mustang", color: "yellow", type: "car", year: 2021 }
+
+
+
+
+* ============== C L O N I N G - V A L U E S ============= *
+
+We can also use the spread operator to clone our arrays and objects
+
+
+Arrays:
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const copy = [...numbers];
+
+console.log(copy); // Array(6) [ 1, 2, 3, 4, 5, 6 ]
+
+
+
+Objects:
+
+const person = {
+  name: "Yssa",
+  age: 17,
+  studying: true,
+};
+const clone = { ...person };
+
+console.log(clone); // Object { name: "Yssa", age: 17, studying: true }
+
+
+
+
+
+* ============== E X T R A C T - V A L U E S ============= *
+
+The spread operator is often used to extract only what's needed from an array:
+
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const [one, two, ...rest] = numbers;
+
+
+console.log(one); // 1
+console.log(two); // 2
+console.log(rest); // Array(4) [ 3, 4, 5, 6 ]
+
+
+-The idea is like you are destructuring the array and storing the value in a variable
