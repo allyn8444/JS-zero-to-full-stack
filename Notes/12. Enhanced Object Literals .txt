@@ -15,6 +15,7 @@ RUN THIS CODE FOR BETTER EXPLANATIONS:
 
 console.log("Es5 attribute declaring")
 // In Es5 you need to enter both object key and variable key which hold value
+
 var name="one"
 var age=25
 var salary=3500
@@ -25,8 +26,13 @@ var emp={
 }
 console.log(emp)
 
+
+-----
+
+
 console.log("Es6 attribute declaring")
 // In Es6 you can enter both object and variable key at once
+
 let name1="two"
 let age1=26
 let salary1=5500
@@ -46,6 +52,7 @@ console.log(emp1)
 
 console.log("Es5 method declaring")
 // In Es5 you need to enter keyword function for declaring function inside object
+
 var name="one"
 var emp={
     name:name,
@@ -56,8 +63,13 @@ var emp={
 console.log(emp)
 emp.showName()
 
+
+-----
+
+
 console.log("Es6 method declaring")
 // In Es6 you dont need to enter keyword for function
+
 let name1="two"
 let emp1={
     name1,
@@ -74,6 +86,8 @@ emp1.showName()
 
 console.log("Es6 attribute and method declaring")
 // You can directly enter attribute and method name inside object
+
+
 let name="one"
 let showName=()=>{ console.log(`Hello ${name}, Welcome to this company`) }
 let emp={
@@ -91,12 +105,17 @@ emp.showName()
 
 console.log("Es5, to return as object")
 // In Es5 for returning you need to enter both object key name and value key
+
 function emp(){
     var name="one";
     var age=25;
     return {name:name,age:age}
 }
 console.log(emp())
+
+
+-----
+
 
 console.log("Es6, to return as object")
 // In Es6 if you enter object key, it will takes with value
@@ -115,6 +134,7 @@ console.log(emp1())
 
 console.log("Es6 object declared using array")
 // Dynamic object creation using shift()
+
 let properties=["name","age","salary"]
 let emp1=["one",27,3500]
 

@@ -1,0 +1,55 @@
+* ============== R E S T - P A R A M E T E R S ============= *
+
+- The rest parameter (...) allows a function to treat an indefinite number of arguments as an array
+- In short, it allows you to pass in more arguments without naming it one by one
+
+As you can see they have the same syntax as the Spread Operator.
+JavaScript is not confusing at all, change my mind.
+
+
+EXAMPLE:
+
+function sumWithRestParameter(a, b, ...restNumbers) {
+  let sum = a + b;
+
+  for (let num of restNumbers) {
+    sum += num;
+  }
+
+  return sum;
+}
+
+console.log(sumWithRestParameter(1, 2)); // Output: 3
+console.log(sumWithRestParameter(1, 2, 3, 4, 5)); // Output: 15
+console.log(sumWithRestParameter(1, 2, 3, 4, 5, 6, 7)); // Output: 28
+
+
+
+The rest parameter restNumbers collects any additional arguments passed to the function into an array.
+
+- Rest parameters simplify working with variable numbers of arguments and are particularly useful
+     when you want to create more flexible and generic functions.
+- They provide a clean way to handle additional parameters without explicitly defining them in the function signature.
+
+
+
+
+==== Another Example:
+
+
+function data(...user, somethingElse){
+     console.log(user)
+}
+
+data("allyn", 16, "single")
+
+
+- Code above will throw an error:
+SyntaxError: A rest parameter must be last in a parameter list
+
+
+- So instead of that, you should always use the rest parameter as the lat parameter in your function.
+
+function data(somethingElse, ...user){
+     console.log(user)
+}

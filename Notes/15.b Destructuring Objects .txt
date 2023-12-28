@@ -1,0 +1,176 @@
+* ============== D E S T R U C T U R I N G - O B J E C T S ============= *
+
+
+- The destructuring assignment syntax is a JavaScript expression that makes it possible to
+     unpack values from arrays,or properties from objects, into distinct variables.
+
+
+Explained:
+
+To illustrate destructuring, we'll make a sandwich. Do you take everything out of the refrigerator to make your sandwich?
+     No, you only take out the items you would like to use on your sandwich.
+
+Destructuring is exactly the same. We may have an array or object that we are working with,
+     but we only need some of the items contained in these.
+
+Destructuring makes it easy to extract only what is needed.
+
+
+THE DIFFERENCE BETWEEN Objects & Arrays:
+- in Object Destructuring the order doesnt matter, in Arrays it does
+- in Object Destructuring, the name matters the most (the key)
+
+- Since Objects has key-value pairs, the names when destructured should be equal
+     to the key (so you can unpack its value).
+     However it is not limited to that. You can change the name, more on it below.
+
+
+
+
+COMMON SYNTAXes:
+
+const { a, b } = obj;
+const { a: a1, b: b1 } = obj;
+const { a: a1 = aDefault, b = bDefault } = obj;
+const { a, b, ...rest } = obj;
+const { a: a1, b: b1, ...rest } = obj;
+
+
+
+
+
+
+
+============================  Basic Object Destructuring
+
+- the idea is the same as in Arrays
+
+
+
+
+const person = { name: "John", age: 30, city: "New York" };
+
+// Destructuring assignment
+const { name, age, city } = person;
+
+console.log(name); // Output: "John"
+console.log(age); // Output: 30
+console.log(city); // Output: "New York"
+
+
+
+
+
+===========================  Assigning to Different Variable Names
+
+
+
+const person = { name: "Alice", age: 25, city: "London" };
+
+// Destructuring with different variable names
+const { name: personName, age: personAge, city: personCity } = person;
+
+console.log(personName); // Output: "Alice"
+console.log(personAge); // Output: 25
+console.log(personCity); // Output: "London"
+
+
+
+
+* ============== D E S T R U C T U R I N G + R E S T params ============= *
+
+
+const { a, ...others } = { a: 1, b: 2, c: 3 };
+console.log(others);
+
+output:
+ { b: 2, c: 3 }
+
+
+
+Another Example:
+
+
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York",
+  job: "Programmer",
+  tech: ["HTML", "CSS", "JS"],
+};
+
+const { name, age, ...more } = person;
+
+console.log(name); // John
+console.log(age); // 30
+console.log(more); //  Object { city: "New York", job: "Programmer", tech: (3) […] }
+
+
+
+
+
+* ============== I N - F U N C T I O N S  ============= 
+
+- using it in functions, you need to destructure it in the parameters section of the function.
+     See example below:
+
+
+const vehicleOne = {
+  brand: "Ford",
+  model: "Mustang",
+  type: "car",
+  year: 2021,
+  color: "red",
+};
+
+
+// as you can see, the object is destructured in the parameters
+function myVehicle({ type, color, brand, model }) {
+  const message = `My ${type} is a ${color} ${brand} ${model}`;
+  console.log(message);
+}
+
+
+myVehicle(vehicleOne);
+
+// output: My car is a red Ford Mustang
+
+
+
+- Notice that the object properties do not have to be declared in a specific order.
+
+
+We can even destructure deeply nested objects by referencing the nested object then using a colon
+     and curly braces to again destructure the items needed from the nested object:
+
+
+const vehicleOne = {
+  brand: "Ford",
+  model: "Mustang",
+  type: "car",
+  year: 2021,
+  color: "red",
+  registration: {
+    city: "Houston",
+    state: "Texas",
+    country: "USA",
+  },
+};
+
+function myVehicle({ model, registration: { state } }) {
+  const message = `My ${model} is registered in ${state}.`;
+  console.log(message);
+}
+
+myVehicle(vehicleOne);
+
+// output: My Mustang is registered in Texas.
+
+
+
+
+
+
+
+
+

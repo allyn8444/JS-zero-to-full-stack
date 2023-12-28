@@ -1,0 +1,139 @@
+* ============== D E S T R U C T U R I N G - A R R A Y S ============= *
+
+
+- The destructuring assignment syntax is a JavaScript expression that makes it possible to
+     unpack values from arrays,or properties from objects, into distinct variables.
+
+
+Explained:
+
+To illustrate destructuring, we'll make a sandwich. Do you take everything out of the refrigerator to make your sandwich?
+     No, you only take out the items you would like to use on your sandwich.
+
+Destructuring is exactly the same. We may have an array or object that we are working with,
+     but we only need some of the items contained in these.
+
+Destructuring makes it easy to extract only what is needed.
+
+
+COMMON SYNTAXes:
+
+const [a, b] = array;
+const [a, , b] = array;
+const [a = aDefault, b] = array;
+const [a, b, ...rest] = array;
+const [a, , b, ...rest] = array;
+
+
+
+
+EXAMPLE:
+
+
+Before:
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+// old way
+const car = vehicles[0];
+const truck = vehicles[1];
+const suv = vehicles[2];
+
+
+with Destructuring:
+
+const vehicles = ["mustang", "f-150", "expedition"];
+const [car, truck, suv] = vehicles;
+
+console.log(car); // mustang
+console.log(truck); // f-150
+console.log(suv); // expedition
+
+
+
+==== another basic Example in Destructuring an Array
+
+
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+
+
+
+
+* ============== S K I P P I N G - E L E M E N T S ============= *
+
+const colors = ["red", "green", "blue"];
+
+// Destructuring with skipping elements
+const [, , blue] = colors;
+
+console.log(blue); // Output: "blue"
+
+
+
+const vehicles = ["mustang", "f-150", "expedition"];
+const [car, , suv] = vehicles;
+
+console.log(car); // mustang
+console.log(truck); // f-150
+console.log(suv); // expedition
+
+
+=== another example:
+
+
+const vehicles = ["mustang", "f-150", "expedition"];
+const [car, , suv] = vehicles;
+
+console.log(car); // mustang
+console.log(truck); // Error: truck is not defined
+
+- it throws an error since we skipped (didn't destructure) the 2nd value and it was not stored in any variable
+
+
+
+
+* ============== D E S T R U C T U R I N G + R E S T params ============= *
+
+
+
+const x = [1, 2, 3, 4, 5];
+const [y, z, ...rest] = x;
+console.log(y); // 1
+console.log(z); // 2
+console.log(rest); // Array(3) [ 3, 4, 5 ]
+
+
+
+
+* ============== I N - F U N C T I O N S  ============= *
+
+
+
+function calculate(a, b) {
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  return [add, subtract, multiply, divide]; // values of each arithmetic are stored in this array
+}
+
+// to access those values returned, we need to unpack it using destructuring
+const [add, subtract, multiply, divide] = calculate(4, 7);
+
+console.log(add);       // Output: 11 (4 + 7)
+console.log(subtract);  // Output: -3 (4 - 7)
+console.log(multiply);  // Output: 28 (4 * 7)
+console.log(divide);    // Output: 0.5714285714285714 (4 / 7)
+
