@@ -56,7 +56,7 @@ console.log(singleNumber(nums));
 
 /*
    
-   ======= EXPLANATION ======
+   =========  E X P L A N A T I O N  ==========
 
 
    Here's what each part of the code does:
