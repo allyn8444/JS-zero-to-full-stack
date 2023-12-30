@@ -1,0 +1,40 @@
+* ============== T E R N A R Y - O P E R A T O R ============= *
+
+- is a concise way of writing conditional expressions.
+- The ternary operator is a simplified conditional operator like if / else.
+
+
+
+SYNTAX: 
+
+ condition ? <expression if true> : <expression if false>
+
+
+
+EXAMPLE:
+
+Before:
+if (authenticated) {
+  renderApp();
+} else {
+  renderLogin();
+}
+
+
+After (using ternary operator):
+authenticated ? renderApp() : renderLogin();
+
+
+if used in a function and needed to be returned, it can be:
+
+return condition ? ifTrue : ifFalse;
+
+
+
+
+Another Example:
+
+let imHandsome = true;
+const evaluate = imHandsome === true ? "I am handsome af" : "take a bath bro";
+
+console.log(evaluate); // I am handsome af
