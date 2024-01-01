@@ -1,0 +1,82 @@
+* =================== F O R - E A C H ================= *
+
+- is a method that is available on arrays.
+- It is used to iterate over the elements of an array and execute a provided function once for each array element.
+- we pass in an anonymous function (mostly arrow functions are used)
+- the function get called one time for every element in th array
+
+- The purpose of forEach is to provide a concise and expressive way to perform an operation on each element
+     of an array without the need for a traditional for loop.
+
+
+
+SYNTAX:
+
+array.forEach( (currentValue, index) => {
+  // Code to be executed for each element
+});
+
+
+-currentValue: The current element being processed in the array.
+-index: The index of the current element being processed.
+
+
+
+
+SIMPLE EXAMPLE:
+
+ const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach( (number, index) => {
+  console.log(`Element at index ${index} is: ${number}`);
+});
+
+
+OUTPUT:
+Element at index 0 is: 1
+Element at index 1 is: 2
+Element at index 2 is: 3
+Element at index 3 is: 4
+Element at index 4 is: 5
+
+
+
+--------
+
+
+Example of performing an operation to each element of an array:
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((value, index) => {
+  value = value * 2;
+  console.log(`Element at index ${index} when multiplied by 2 is: ${value}`);
+});
+
+
+output:
+
+Element at index 0 when multiplied by 2 is: 2
+Element at index 1 when multiplied by 2 is: 4
+Element at index 2 when multiplied by 2 is: 6
+Element at index 3 when multiplied by 2 is: 8
+Element at index 4 when multiplied by 2 is: 10
+
+
+------
+
+
+You can also do this:
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+let sum = 0;
+
+function adder(number) {
+  sum += number;
+}
+numbers.forEach(adder);
+
+console.log(sum); // output: 15

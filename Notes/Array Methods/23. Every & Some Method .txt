@@ -1,0 +1,78 @@
+* ========================== E V E R Y - M E T H O D =================== *
+
+
+- is a higher-order array method that checks whether all elements in an array satisfy a provided condition.
+- it returns a BOOLEAN value
+- If at least one element fails the condition, the method returns false; otherwise, it returns true.
+
+
+SYNTAX:
+
+
+const result = array.every( (currentValue, index) => {
+
+     // Return true if the element meets the condition
+
+} )
+
+
+- currentValue: The current element being processed in the array.
+- index: The index of the current element being processed.
+
+
+
+EXAMPLE:
+
+const numbers = [2, 4, 6, 8, 10];
+
+const allEven = numbers.every((number) => number % 2 === 0);
+
+console.log(allEven); // Output: true
+
+
+
+The every method is useful when you want to ensure that a certain condition is true for every element in an array.
+If any element fails the condition, the method stops iterating and returns false
+
+
+
+
+
+* ========================= S O M E - M E T H O D ====================== *
+
+
+- is another higher-order array method that checks whether AT LEAST ONE
+     element in an array satisfies a provided condition.
+
+- it returns a BOOLEAN value
+- If none of the elements satisfy the condition, the method returns false; otherwise, it returns true.
+
+
+
+SYNTAX:
+
+const result = array.some( (currentValue, index) => {
+
+     // Return true if the element meets the condition
+
+})
+
+
+- currentValue: The current element being processed in the array.
+- index: The index of the current element being processed.
+
+
+
+EXAMPLE:
+
+const numbers = [1, 3, 5, 8, 9, 11];
+
+const hasEven = numbers.some((number) => number % 2 === 0);
+
+console.log(hasEven); // Output: true
+
+
+
+
+The some method is useful when you want to determine whether a specific condition is true for at least one element in an array.
+It stops iterating as soon as it finds the first element that satisfies the condition.
