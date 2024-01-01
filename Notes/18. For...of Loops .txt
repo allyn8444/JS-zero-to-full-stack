@@ -1,0 +1,62 @@
+* ============== F O R - O F - L O O P S ============= *
+
+
+- for of statement loops through the values of an iterable object.
+- It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more.
+- It allows you to iterate directly over the values of the elements, rather than
+     dealing with their indexes or keys
+
+
+
+SYNTAX:
+
+for (variable of iterable) {
+  // code block to be executed
+}
+
+
+variable - For every iteration the value of the next property is assigned to the variable.
+          Variable can be declared with const, let, or var.
+
+iterable - An object that has iterable properties.
+
+
+
+EXAMPLE:
+
+
+const cars = ["BMW", "Volvo", "Mini"];
+
+for (let x of cars) {
+  console.log(x);
+}
+
+output:
+BMW
+Volvo
+Mini
+
+
+- as you can see, just need the variable (in our example 'x')
+     to access the values.
+     Not the same when we use for..in when iterating an array, we need
+     to do 'cars[x]' like that.
+
+
+
+
+Another Example in Strings:
+
+let myName = "Ashley";
+
+for (let letter of myName) {
+  console.log(letter);
+}
+
+output:
+A
+s
+h
+l
+e
+y
