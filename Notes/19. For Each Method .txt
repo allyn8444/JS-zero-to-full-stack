@@ -12,14 +12,13 @@
 
 SYNTAX:
 
-array.forEach(function(currentValue, index, array) {
+array.forEach( (currentValue, index) => {
   // Code to be executed for each element
 });
 
 
 -currentValue: The current element being processed in the array.
 -index: The index of the current element being processed.
--array: The array on which forEach was called.
 
 
 

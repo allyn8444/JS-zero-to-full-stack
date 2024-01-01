@@ -1,0 +1,38 @@
+* =================== M A P - M E T H O D ================= *
+  
+
+- method used to create a NEW array by applying a provided function to each element of the original array.
+- It doesn't modify the original array but instead returns a new array containing the results of
+     applying the provided function to each element.
+
+
+
+SYNTAX:
+
+const newArray = originalArray.map( (currentValue, index, array) => {
+  // Code to be executed for each element
+  // Return the new value for the element
+});
+
+(i just prefer arrow functions in methods)
+
+- currentValue: The current element being processed in the array.
+- index: The index of the current element being processed.
+
+
+
+EXAMPLE:
+
+const numbers = [1, 2, 3, 4, 5];
+
+const squaredNumbers = numbers.map( (number) => {
+  return number * number;
+});
+
+console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+
+
+If you observed, map() method is kinda the same the forEach() method.
+Their process is actually the same, the only difference is that map() method
+creates NEW array while forEach() just transforms the current array
