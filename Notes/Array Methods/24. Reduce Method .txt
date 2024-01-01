@@ -1,0 +1,166 @@
+* ================== R E D U C E - M E T H O D =================== *
+
+
+- is a higher-order array method that is used to REDUCE an array to a single value
+- It iterates over each element of the array and accumulates a result by applying
+     a provided function that you define.
+
+- The result can be of any type: a number, a string, an object, or another array.
+- It does not change the original array.  (it makes a copy while performing the function)
+
+
+
+
+SYNTAX:
+
+const result = array.reduce( (accumulator, currentValue, index) =>  {
+
+  // Return the updated accumulator value based on the current element
+
+}, initialValue);
+
+
+- accumulator: The accumulated result.
+- currentValue: The current element being processed in the array.
+- index: The index of the current element being processed.
+- initialValue: An optional initial value for the accumulator.
+
+
+
+-------------------
+
+
+
+SIMPLE EXAMPLE:
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15
+
+
+
+
+- The reduce method is versatile and can be used for a variety of tasks, such as
+     finding the maximum or minimum value in an array, concatenating strings,
+     flattening arrays, and more.
+
+- The key is to provide a function that defines how the reduction should occur
+     based on the elements of the array.
+
+
+
+------
+
+Another Example:
+
+const numb = [2, 3, 4, 5];
+
+const product = numb.reduce(
+  (storedVal, currentVal) => storedVal * currentVal,
+  1
+);
+
+console.log(product); // Output: 120
+
+
+
+
+
+
+================== A D D I T I O N A L =================
+
+
+---------- FINDING THE MAXIMUM NUMBER IN AN ARRAY:
+
+const numbers = [5, 2, 8, 10, 3];
+
+const maxNumber = numbers.reduce(function(accumulator, currentValue) {
+  return Math.max(accumulator, currentValue);
+}, -Infinity);
+
+console.log(maxNumber); // Output: 10
+
+
+
+
+---------- HOW IT WORKS:
+
+
+1.
+Initialization:
+     - The numbers array contains [5, 2, 8, 10, 3].
+     - The reduce method is called on this array with an initial value for the accumulator,
+          which is -Infinity in this case.
+
+2.
+First Iteration (5 and -Infinity):
+     - The first element of the array, 5, becomes the currentValue.
+     - The accumulator starts with the initial value, -Infinity.
+          (we can use zero as the initialValue because values inside an array might include negatives)
+     - The callback function compares 5 and -Infinity using Math.max(accumulator, currentValue),
+          which results in 5 (the maximum of the two).
+     - The updated accumulator becomes 5.
+
+3.
+Second Iteration (2 and 5):
+     - The second element of the array, 2, becomes the currentValue.
+     - The accumulator is now 5.
+     - The callback function compares 2 and 5, resulting in 5 (the maximum of the two).
+     - The updated accumulator becomes 5.
+
+4.
+Third Iteration (8 and 5):
+     - The third element of the array, 8, becomes the currentValue.
+     - The accumulator is now 5.
+     - The callback function compares 8 and 5, resulting in 8 (the maximum of the two).
+     - The updated accumulator becomes 8.
+
+5.
+Fourth Iteration (10 and 8):
+     - The fourth element of the array, 10, becomes the currentValue.
+     - The accumulator is now 8.
+     - The callback function compares 10 and 8, resulting in 10 (the maximum of the two).
+     - The updated accumulator becomes 10.
+
+6.
+Fifth Iteration (3 and 10):
+     - The fifth element of the array, 3, becomes the currentValue.
+     - The accumulator is now 10.
+     - The callback function compares 3 and 10, resulting in 10 (the maximum of the two).
+     - The updated accumulator becomes 10.
+
+7.
+Final Result:
+     - After iterating through all elements, the final value of the accumulator is 10,
+          which is the maximum value in the array.
+     - The result is stored in the maxNumber variable and then logged to the console.
+
+
+
+
+
+- So, the reduce method gradually updates the accumulator by comparing it with each element
+     in the array and keeping the maximum value encountered so far.
+
+- The initial value of -Infinity ensures that any value in the array will be greater than
+     the initial accumulator value.
+
+
+
+===== AND GUESS WHAT
+
+you can refactor/simplify that code above into this:
+
+
+const numbers = [5, 2, 8, 10, 3];
+
+const highest = numbers.reduce(
+  (storedVal, currentVal) => (currentVal > storedVal ? currentVal : storedVal),
+  -Infinity
+);
+
+console.log(highest); // Output: 10
