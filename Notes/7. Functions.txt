@@ -242,6 +242,15 @@ function square(x){
      return x * x;
 }
 
+------ I M P O R T A N T -----
+!NOTE: Just remember that you should not wrap it in brackets or else it will return an undefined value.
+Example:
+
+const square = x => { x * x };
+
+^ in that syntax, if you'll use that function, it will output undefined
+
+So always remember that an Implicit Return Arrow Function should'nt be wrapped by brackets
 
 
 
