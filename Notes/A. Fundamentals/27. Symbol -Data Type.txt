@@ -1,0 +1,53 @@
+* ================== S Y M B O L - D A T A - T Y P E =================== *
+
+
+- `Symbol` is a special type in JavaScript introduced with ECMAScript 6 (ES6).
+- It is a unique and immutable (cannot be changed) data type that represents a unique identifier.
+- Symbols are often used to create properties with names that are guaranteed to be unique
+     and not conflict with other properties, even if they have the same name.
+
+
+
+-------------- CREATING SYMBOLS:
+
+- You can create a symbol using the `Symbol()` function, and each symbol created is guaranteed to be unique:
+
+const mySymbol = Symbol();
+console.log(typeof mySymbol); // Output: symbol
+
+
+EXAMPLE:
+
+const mySymbol = Symbol();
+const anotherSymbol = Symbol('description'); // You can provide an optional description (not used for comparison)
+
+
+
+-------------- UNIQUENESS:
+
+- Each symbol is guaranteed to be unique, even if it has the same description:
+
+
+EXAMPLE:
+
+
+const symbol1 = Symbol('key');
+const symbol2 = Symbol('key');
+
+console.log(symbol1 === symbol2); // Output: false
+
+
+
+-------------- SYMBOL as OBJECT `KEY`:
+
+- Symbols are often used as unique keys for object properties to avoid naming conflicts:
+
+
+EXAMPLE:
+
+const myObject = {};
+const mySymbol = Symbol("myKey");
+
+myObject.mySymbol = "Hello, Symbol!";
+
+console.log(myObject.mySymbol); // Output: Hello, Symbol!
