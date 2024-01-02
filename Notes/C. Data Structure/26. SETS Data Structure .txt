@@ -1,0 +1,114 @@
+* ================== S E T S - D A T A - S T R U C T U R E =================== *
+
+- is a built-in data structure that allows you to store UNIQUE values of any data type,
+     whether primitive values or object references.
+
+- `Set` Objects are useful when you need to store a list  of unique elements and
+     quickly check for the existence of a specific value.
+
+- Unlike arrays, Set objects DO NOT ALLOW DUPLICATES entries, making them
+     useful when you need to manage a collection of distinct elements
+
+
+
+
+-------------------- CREATING A SET
+
+
+// Creating an empty Set
+const mySet = new Set();
+
+
+
+// Creating a Set with initial values
+const anotherSet = new Set([1, 2, 3, 'hello', { key: 'value' }]);
+
+
+
+
+---------------------- SIZE, ADDING & DELETING ELEMENTS
+
+- You can add elements to a Set using the `add` method and
+     remove elements using the `delete` method:
+
+
+ADDING:
+
+mySet.add(42);
+mySet.add('world');
+mySet.add({ key: 'unique' });
+
+
+
+SIZE:
+
+console.log(mySet.size); // Output: 3
+
+
+
+DELETE:
+
+mySet.delete('world');
+console.log(mySet.size); // Output: 2
+
+
+
+
+---------------------- CHECKING EXISTENCE
+
+- You can check if an element exists in a Set using the `has` method,
+     it returns a BOOLEAN value:
+
+console.log(mySet.has(42)); // Output: true
+console.log(mySet.has('world')); // Output: false
+
+
+
+---------------------- ITERATING OVER ELEMENTS
+
+- You can iterate over the elements in a Set using methods such as `forEach`
+     or the entries iterator:
+
+
+FOR EACH:
+
+mySet.forEach(value => {
+  console.log(value);
+});
+
+
+
+
+FOR..OF:
+
+for (const value of mySet) {
+  console.log(value);
+}
+
+
+
+---------------------- NO DUPLICATES
+
+- a KEY FEATURE of Set is that it only allows unique values.
+     If you try to add a duplicate value, it will be ignored:
+
+
+Example:
+
+mySet.add(42);
+mySet.add(42);
+
+console.log(mySet.size); // Output: 1
+
+
+
+
+
+Use Cases:
+- Managing a collection of unique values.
+- Checking for the existence of a specific value efficiently.
+- Removing duplicates from an array.
+
+
+Sets provide an efficient and convenient way to handle collections of distinct
+     values without the need for manual checks for uniqueness.
