@@ -1,0 +1,162 @@
+* ================== M A P S - D A T A - S T R U C T U R E =================== *
+
+
+- Map is a built-in data structure introduced in (ES6) that allows you to store
+     key-value pairs where both the keys and values can be of any data type.
+
+
+
+
+It is similar to an object, but with a few key differences:
+
+     —> Keys can be of any data type: Unlike objects, where keys are limited to
+strings and symbols, Map allows you to use any data type as keys, including
+numbers, booleans, objects, and even other Map instances.
+
+     —> Maintains insertion order: Map preserves the order of key-value pairs as
+they were inserted, while object keys may not be guaranteed to be in a specific
+order.
+
+     —> Iteration: Map provides built-in methods for easy iteration over its elements.
+
+
+
+
+--------------------------------  CREATING A MAP:
+
+- You can create a Map using the Map constructor, and you can initialize
+     it with an array of key-value pairs or add entries later:
+
+
+
+// Creating an empty Map
+const myMap = new Map();
+
+
+
+// Creating a Map with initial entries
+const anotherMap = new Map([
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+  ['key3', 'value3']
+]);
+
+
+
+
+------------------------------------  ADDING AND RETRIEVING ENTRIES:
+
+- You can add entries to a Map using the `set` method,
+     and retrieve values using the `get` method:
+
+
+ADDING:
+
+myMap.set('name', 'John');
+myMap.set(42, 'Answer to the Ultimate Question');
+myMap.set({ key: 'object' }, 'Value for object key');
+
+
+
+RETRIEVING VALUES (OUTPUT):
+
+console.log(myMap.get('name')); // Output: John
+console.log(myMap.get(42));     // Output: Answer to the Ultimate Question
+
+
+
+
+
+-----------------------------------  CHECKING EXISTENCE & DELETING ENTRIES
+
+
+- You can check if a key exists in a Map using the `has` method,
+     and delete entries using the `delete` method:
+
+
+CHECKING EXISTENCE:
+
+console.log(myMap.has('name')); // Output: true
+
+
+
+DELETING:
+
+myMap.delete('name');
+console.log(myMap.has('name')); // Output: false
+
+
+
+------------------------------------ SIZE OF THE MAP:
+
+
+- You can get the size (number of entries) of a Map using the `size` property:
+
+console.log(myMap.size);
+
+
+
+
+------------------------------------ ITERATING OVER ENTRIES:
+
+
+- You can iterate over the entries in a Map using various methods
+     such as forEach, for...of, or the entries iterator:
+
+
+
+FOR EACH:
+
+myMap.forEach((value, key) => {
+  console.log(`${key}: ${value}`);
+});
+
+
+-ik ik, its kinda odd to see that the first parameter is the value. So the reason behind is:
+ In the case of a Map, the elements are key-value pairs, and the callback parameters are (value, key, map)
+
+
+FOR OF:
+
+for (const [key, value] of myMap) {
+  console.log(`${key}: ${value}`);
+}
+
+
+-----------------------------------  ADDITIONAL
+
+.keys() method:
+
+myMap.keys() will output all the keys in our existing Map
+
+
+.values() method:
+
+myMap.values() will output all values in our existing Map
+
+
+
+For more information, visit: https://www.w3schools.com/js/js_object_maps.asp
+
+
+
+
+
+
+Exercise:
+
+
+const myMap = new Map();
+
+myMap.set("a", 1);
+myMap.set("b", 2);
+myMap.set("c", 3);
+
+console.log(myMap);
+
+console.log(myMap.get("a"));
+
+console.log(myMap.size);
+
+console.log(myMap.delete("b"));
+console.log(myMap.size);
