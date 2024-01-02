@@ -1,0 +1,77 @@
+* ================== I N T R O D U C T I O N  - T O -  D.O.M. =================== *
+
+
+- The DOM, or Document Object Model, is a way for browsers to understand and interact with web pages
+- When a web page is `loaded` , the browser creates a Document Object Model of the page.
+- Imagine a web page as a tree made up of different parts like paragraphs, images, and links.
+- The DOM represents this tree structure in a programming-friendly way.
+
+
+IF YOU WANT TO DEEP DIVE, VISIT: https://www.atatus.com/blog/a-beginners-guide-to-dom/
+
+
+
+
+
+* ================== K E Y - C O N C E P T S =================== *
+
+
+1.
+Nodes:
+     - Think of nodes as different elements on a web page, such as paragraphs, images, or headings.
+     - Nodes are the building blocks of the DOM tree.
+
+
+2.
+Parent and Child Nodes:
+     - Nodes can have relationships.
+     - An element (like a div) can be a parent to other elements (like paragraphs)
+          and a child of another element (like the body).
+
+
+3.
+Attributes:
+     - Elements can have attributes, which are extra pieces of information.
+     - For example, an image element may have a src attribute that tells the browser where to find the image.
+
+
+4.
+Tree Structure:
+     - The DOM is structured like a tree, with the `document` at the top.
+     - Elements branch out, and their children are contained within them.
+
+
+5.
+Accessing the DOM:
+     - We use JavaScript to talk to the DOM. The document object is our starting point.
+     - JavaScript allows us to select, create, and change elements on the web page.
+
+
+6.
+Manipulating Content:
+     - With JavaScript, we can change what's on a web page.
+     - We can add or remove elements, change text, or update attributes.
+
+
+7.
+Event Handling:
+     - The DOM lets us respond to user actions like clicks or keypresses.
+     - We can attach special functions (event listeners) to elements to do something when these events happen.
+
+
+8.
+Browser Interaction:
+     - Browsers use the DOM to understand how to display web pages.
+     - The DOM helps browsers interact with the content of a web page.
+
+
+9.
+Dynamic Web Pages:
+     - The DOM makes web pages interactive.
+     - Instead of static content, we can create pages that respond to user actions, making them dynamic.
+
+
+
+
+- The DOM is like a backstage pass for developers to interact with and change what's happening on a web page.
+-It's a fundamental concept for building interactive and dynamic websites.

@@ -1,0 +1,189 @@
+
+* ================== A C C E S S I N G - T H E - D.O.M. =================== *
+
+
+- There are several ways to access and interact with the Document Object Model (DOM) in JavaScript.
+- Here are some common methods:
+
+
+
+
+1.
+document.getElementByID() :
+
+     - This method allows you to select an element by its unique `id` attribute.
+     
+
+in index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Access Example</title>
+</head>
+<body>
+  <div id="myDiv">Hello, World!</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+in script.js file:
+
+// Accessing an element by its id
+const myElement = document.getElementById('myDiv');
+
+// Modifying the element's content
+myElement.textContent = 'Hello, DOM!';
+
+
+
+---------------------------
+
+
+
+2.
+document.getElementsByClassName() :
+
+     - Selects elements based on their class name. It returns a collection of elements.
+
+
+in index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Access Example</title>
+</head>
+<body>
+  <p class="myClass">This is a paragraph.</p>
+  <p class="myClass">Another paragraph.</p>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+in script.js file:
+
+// Accessing elements by their class name
+const elementsByClass = document.getElementsByClassName('myClass');
+
+// Modifying the content of the first element with the class
+elementsByClass[0].textContent = 'Updated content!';
+
+
+
+---------------------------
+
+
+
+3.
+document.getElementsByTagName()
+
+     - Selects elements based on their tag name (e.g., 'div', 'p'). It returns a collection of elements.
+
+in index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Access Example</title>
+</head>
+<body>
+  <div>This is a div.</div>
+  <p>Paragraph 1.</p>
+  <p>Paragraph 2.</p>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+in script.js file:
+
+// Accessing elements by their tag name
+const paragraphs = document.getElementsByTagName('p');
+
+// Modifying the content of the first paragraph
+paragraphs[0].textContent = 'Updated paragraph!';
+
+
+
+
+---------------------------
+
+
+
+4.
+document.querySelector()
+
+     - Uses CSS selector syntax to select the first matching element.
+
+in index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Access Example</title>
+</head>
+<body>
+  <p class="myClass">This is a paragraph.</p>
+  <div id="myDiv">Hello, World!</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+in script.js file:
+
+// Using CSS selector syntax to select the first matching element
+// Example is about accessing a class
+const selectedElement = document.querySelector('.myClass');
+
+// Modifying the content of the selected element
+selectedElement.textContent = 'Updated content!';
+
+
+
+---------------------------
+
+
+
+5.
+document.querySelectorAll()
+
+     - Selects all matching elements using CSS selector syntax.
+
+in index.html file:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Access Example</title>
+</head>
+<body>
+  <p class="myClass">Paragraph 1.</p>
+  <p class="myClass">Paragraph 2.</p>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+in script.js file:
+
+// Using CSS selector syntax to select all matching elements
+const allElements = document.querySelectorAll('.myClass');
+
+// Modifying the content of all selected elements
+allElements.forEach(element => {
+  element.textContent = 'Updated content!';
+});
