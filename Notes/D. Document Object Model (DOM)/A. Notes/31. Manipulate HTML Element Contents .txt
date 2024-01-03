@@ -1,0 +1,142 @@
+* ================== M A N I P U L A T I N G - H T M L - E L E M E N T S =================== *
+
+
+
+
+- `innerText`, `innerHTML`, and `textContent` are properties in JavaScript that are used
+     to MANIPULATE the content of HTML elements.
+
+
+---------------- WORTH TO REMEMBER:
+
+- When manipulating HTML content, choose the property that best suits your needs.
+
+- If you're working with visible text and want to consider styles, use innerText.
+- If you need to deal with HTML content and want to include tags, use innerHTML.
+- If you want all text content regardless of styles or visibility, use textContent.
+
+
+
+- Each of these properties has specific characteristics and use cases:
+
+
+* ========================== innerText =========================== *
+
+
+- innerText retrieves or sets the text content of an element, excluding HTML tags.
+- It takes into account styles and does not show hidden elements.
+- Use innerText when you want to deal only with the `visible text content` of an element.
+
+
+in HTML file:
+
+<div id="exampleDiv">This is <strong>inner text</strong> content.</div>
+
+
+
+in JS file:
+
+const element = document.getElementById('exampleDiv');
+console.log(element.innerText); // Output: This is inner text content.
+
+
+
+------------------- CHANGING CURRENT VALUES
+
+in HTML file:
+<div id="exampleDiv">This is <strong>inner text</strong> content.</div>
+
+
+in JS file:
+const element = document.getElementById('exampleDiv');
+element.innerText = 'New inner text content';
+
+
+
+After running this JavaScript code, the content of
+the div element will be updated to:
+
+<div id="exampleDiv">New inner text content</div>
+
+
+
+
+
+* ========================== innerHTML =========================== *
+
+
+- innerHTML retrieves or sets the HTML content of an element, `including any HTML tags`.
+- It allows you to get or set the entire content, including child elements.
+- Be cautious when using innerHTML with user inputs to prevent security risks like Cross-Site Scripting (XSS).
+
+
+in HTML file:
+
+<div id="exampleDiv">This is <strong>innerHTML</strong> content.</div>
+
+
+
+in JS file:
+
+const element = document.getElementById('exampleDiv');
+console.log(element.innerHTML); // Output: This is <strong>innerHTML</strong> content.
+
+
+
+------------------- CHANGING CURRENT VALUES
+
+in HTML file:
+<div id="exampleDiv">This is <strong>innerHTML</strong> content.</div>
+
+
+in JS file:
+const element = document.getElementById('exampleDiv');
+element.innerHTML = 'New <em>innerHTML</em> content';
+
+
+After running this JavaScript code, the content of
+the div element will be updated to:
+
+<div id="exampleDiv">New <em>innerHTML</em> content</div>
+
+
+
+
+
+* ========================== textContent =========================== *
+
+
+- textContent retrieves or sets the text content of an element, similar to innerText.
+- Unlike innerText, it includes all text content, even if it's within hidden or script elements.
+- It does not consider styles.
+- the layout of the output is the same in innerHTML but without the HTML tags
+
+
+in HTML file:
+
+<div id="exampleDiv">This is <strong>textContent</strong> content.</div>
+
+
+
+in JS file:
+
+const element = document.getElementById('exampleDiv');
+console.log(element.textContent); // Output: This is textContent content.
+
+
+
+------------------- CHANGING CURRENT VALUES
+
+in HTML file:
+<div id="exampleDiv">This is <strong>textContent</strong> content.</div>
+
+
+in JS file:
+const element = document.getElementById('exampleDiv');
+element.textContent = 'New textContent content';
+
+
+After running this JavaScript code, the content of
+the div element will be updated to:
+
+<div id="exampleDiv">New textContent content</div>
