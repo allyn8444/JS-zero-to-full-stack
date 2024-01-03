@@ -1,0 +1,122 @@
+* ================== C L A S S L I S T =================== *
+
+
+- In JavaScript, the classList property is part of the DOM interface
+     that represents the classes of an HTML element.
+
+- It provides methods to manipulate the classes of an element.
+
+
+---- Accessing `classList`:
+
+
+const element = document.getElementById('myElement');
+const classes = element.classList;
+
+
+It will return the list of classes of that certain element.
+
+
+
+* ================== C L A S S L I S T - M E T H O D S =================== *
+
+
+
+
+-------------------  `add` Method:
+
+- The add method is used to add one or more class names to an element's classList.
+
+
+SYNTAX:
+
+element.classList.add(class1, class2, ...);
+
+
+EXAMPLE:
+
+<!-- HTML -->
+<div id="myElement" class="box">Hello, World!</div>
+
+<!-- JavaScript -->
+<script>
+  // Get the element
+  const myElement = document.getElementById('myElement');
+
+  // Add a new class
+  myElement.classList.add('highlight');
+</script>
+
+
+^ In this example, the highlight class is added to the box element.
+
+
+
+
+--------------------  `remove` Method:
+
+- The remove method is used to remove one or more class names from an element's classList.
+
+
+SYNTAX:
+
+element.classList.remove(class1, class2, ...);
+
+
+EXAMPLE:
+
+<!-- HTML -->
+<div id="myElement" class="box highlight">Hello, World!</div>
+
+<!-- JavaScript -->
+<script>
+  // Get the element
+  const myElement = document.getElementById('myElement');
+
+  // Remove a class
+  myElement.classList.remove('highlight');
+</script>
+
+
+^ In this example, the highlight class is removed from the box element.
+
+
+
+
+
+--------------------  `toggle` Method:
+
+
+- The toggle method is used to toggle a class.
+- If the class exists, it is removed; if it does not exist, it is added.
+
+
+SYNTAX:
+
+element.classList.toggle(class, force);
+
+
+- If force is true, the class is added.
+- If force is false, the class is removed.
+- If force is not provided, the class is toggled (added if it doesn't exist, removed if it does).
+
+
+
+EXAMPLE:
+
+<!-- HTML -->
+<div id="myElement" class="box">Hello, World!</div>
+
+<!-- JavaScript -->
+<script>
+  // Get the element
+  const myElement = document.getElementById('myElement');
+
+  // Toggle a class
+  myElement.classList.toggle('highlight');
+</script>
+
+
+
+^ In this example, the highlight class is added because it doesn't exist.
+     If you run the same code again, it will remove the highlight class.
