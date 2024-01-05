@@ -1,0 +1,177 @@
+* ================== G E T T I N G - & -  S E T T I N G - A T T R I B U T E S =================== *
+
+
+- getAttribute() and setAttribute() are two JavaScript methods that are used to interact
+     with HTML attributes in the context of the Document Object Model (DOM).
+
+- These methods are particularly useful when you need to get or set the values of HTML element
+     attributes dynamically using JavaScript.
+
+
+
+- Use getAttribute() when you need to retrieve the current value of an attribute.
+- Use setAttribute() when you want to set or change the value of an attribute.
+
+
+* ================== getAttribute() =================== *
+
+
+- used to retrieve the value of a specified attribute of an HTML element.
+Here's a basic overview:
+
+
+SYNTAX:
+
+element.getAttribute(attributeName);
+
+
+EXAMPLE:
+
+var element = document.getElementById("myElement");
+var value = element.getAttribute("data-custom");
+
+console.log(value);
+
+
+
+In the example above:
+- element is an HTML element reference obtained, for instance, using getElementById.
+- "data-custom" is the name of the attribute you want to retrieve the value of.
+- The method returns the value of the specified attribute.
+
+
+
+USE CASES:
+
+- Getting the value of the "src" attribute of an image:
+
+var image = document.getElementById("myImage");
+var src = image.getAttribute("src");
+console.log(src);
+
+
+- Checking if an element has a specific class:
+
+var element = document.getElementById("myElement");
+var hasClass = element.getAttribute("class") === "myClass";
+console.log(hasClass);
+
+
+
+
+
+
+* ================== setAttribute() =================== *
+
+- is used to set the value of a specified attribute on an HTML element.
+Here's a basic overview:
+
+
+SYNTAX:
+
+element.setAttribute(attributeName, attributeValue);
+
+
+EXAMPLE:
+
+var element = document.getElementById("myElement");
+element.setAttribute("data-custom", "new value");
+
+
+
+In the example above:
+- element is an HTML element reference obtained, for instance, using getElementById.
+- "data-custom" is the name of the attribute you want to set or create.
+- "new value" is the value you want to assign to the attribute.
+
+
+
+USE CASES:
+
+- Changing the source of an image dynamically:
+
+var image = document.getElementById("myImage");
+image.setAttribute("src", "new-image.jpg");
+
+
+- Adding a new attribute to an element:
+
+var element = document.getElementById("myElement");
+element.setAttribute("data-custom", "new value");
+
+
+
+
+------------------------ ADDITIONAL -----------------------------------
+
+- YOU CAN ALSO GET AND SET ATTRIBUTES.
+- BELOW ARE THE WAYS:
+
+
+---------------------------
+
+
+get href attribute value of anchor tag
+
+
+const element =  document.querySelector("a");
+console.log(element.href)
+
+^ this will return the URL/Link in your anchor tag
+     if none, it wil return a blank
+
+
+
+set href attribute value of anchor tag
+
+
+const element =  document.querySelector("a");
+element.href = "youtube.com"
+
+console.log(element.href); // Output: youtube.com
+
+
+
+---------------------------
+
+get input value attribute of input element
+
+const input = document.querySelector("input");
+console.log(input.value)
+
+^ returns input attribute value
+     if none, it will return blank
+
+
+
+set input value attribute of input element
+
+
+const input = document.querySelector("input");
+input.value = "Password"
+
+console.log(input.value); // Output: Password
+
+
+
+---------------------------
+
+get type attribute value of input element
+
+const input = document.querySelector("input");
+console.log(input.type); // Output: text
+
+
+^ Returns specific type of input.
+     for more info, visit: https://www.w3schools.com/html/html_form_input_types.asp
+
+
+
+set type attribute value of input element
+
+const input = document.querySelector("input");
+input.type = "email";
+
+console.log(input.type); // Output: email
+
+---------------------------
