@@ -1,0 +1,156 @@
+* ====================================  S T Y L E  ============================== *
+
+
+- the `style` property is used to interact with the styling of HTML elements.
+- This property allows you to dynamically manipulate the CSS styles of an element directly through JavaScript.
+
+
+Let's explore how you can use the `style` property for common styling tasks:
+
+
+
+-----------------  Accessing and Modifying Styles -----------------
+
+
+ACCESSING STYLES:
+
+- You can access the styles of an element using the `style` property.
+- The `style` property is an object that contains inline styles of the element.
+
+
+// Accessing the style of an element
+
+var element = document.getElementById("myElement");
+var elementStyle = element.style;
+
+
+
+// Accessing a specific style property
+
+var backgroundColor = element.style.backgroundColor;
+console.log(backgroundColor);
+
+
+
+
+
+
+MODIFYING STYLESs:
+
+- You can modify the styles of an element by directly assigning values to the
+     corresponding properties of the `style` object.
+
+
+// Modifying the style of an element
+
+var element = document.getElementById("myElement");
+
+
+
+// Changing background color
+
+element.style.backgroundColor = "lightblue";
+
+
+
+// Changing font size
+
+element.style.fontSize = "18px";
+
+
+
+// Changing text color
+
+element.style.color = "green";
+
+
+
+
+
+----------------------------- Common Style Properties -----------------------------
+
+Here are some commonly used style properties that you can manipulate:
+
+
+- **Background Color:**
+  ```javascript
+  element.style.backgroundColor = "lightblue";
+  ```
+
+
+- **Font Size:**
+  ```javascript
+  element.style.fontSize = "18px";
+  ```
+
+
+- **Text Color:**
+  ```javascript
+  element.style.color = "green";
+  ```
+
+
+- **Width and Height:**
+  ```javascript
+  element.style.width = "200px";
+  element.style.height = "100px";
+  ```
+
+
+- **Margin and Padding:**
+  ```javascript
+  element.style.margin = "10px";
+  element.style.padding = "5px";
+  ```
+
+
+
+---------------------- Important Points to Note ----------------------
+
+
+1.
+Camel Case Property Names:
+   - JavaScript uses camel case for style property names.
+   For example, `background-color` becomes `backgroundColor` in JavaScript.
+
+
+2.
+Units:
+   - Make sure to include units (e.g., "px", "em", "%") when setting size-related properties.
+
+
+3.Inline Styles:
+   - The `style` property deals with inline styles.
+   If you have styles defined in a separate CSS file or style tag, modifying the `style` property won't affect them.
+
+
+
+EXAMPLE:
+
+
+Let's say you have an HTML element like this:
+
+```html
+<div id="myElement">Hello, World!</div>
+```
+
+And you want to dynamically style it using JavaScript:
+
+```javascript
+
+// Getting the element
+var element = document.getElementById("myElement");
+
+
+// Modifying the style
+element.style.backgroundColor = "lightblue";
+element.style.fontSize = "18px";
+element.style.color = "green";
+```
+
+This JavaScript code will change the background color to light blue,
+     set the font size to 18 pixels, and change the text color to green
+     for the HTML element with the id "myElement".
+
+By using the `style` property, you can make your web pages more interactive
+     and responsive by adjusting styles dynamically based on user actions or other events.
