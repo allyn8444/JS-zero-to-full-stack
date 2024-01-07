@@ -1,0 +1,201 @@
+
+* ======================= C R E A T I N G - E L E M E N T ========================= *
+
+- This method is used to create a new HTML element.
+- You can create elements like divs, paragraphs, spans, etc.
+
+
+// Syntax
+const newElement = document.createElement('elementType');
+
+// Parameters
+// 'elementType': The type of HTML element you want to create, like 'div', 'p', 'span', etc.
+
+
+EXAMPLE:
+
+const newDiv = document.createElement('div');
+
+
+* ======================= A P P E N D - C H I L D ========================= *
+
+- This method is used to append a child element to a parent element.
+- It adds the specified child as the last child of the parent.
+
+
+- Now that you have your new robot part (new div), you need to attach it to the robot.
+- appendChild() helps you do this.
+- It's like snapping the new part onto your robot.
+
+
+// Syntax
+parentElement.appendChild(newChild);
+
+// Parameters
+// 'newChild': The element you want to add as a child to the 'parentElement'.
+
+
+EXAMPLE:
+
+const parentElement = document.getElementById('parent');
+parentElement.appendChild(newDiv);
+
+
+
+* ======================= A P P E N D  ========================= *
+
+
+- If you have multiple robot parts and want to add them all at once, you can use append().
+- It's like saying, "Here are all the parts, attach them to the robot."
+
+
+// Syntax
+parentElement.append(newChild1, newChild2, ...);
+
+// Parameters
+// 'newChild1', 'newChild2', ...: The elements or text nodes you want to append to the 'parentElement'.
+
+
+
+EXAMPLE:
+
+const parentElement = document.getElementById('parent');
+parentElement.append(newDiv, "Some text");
+
+
+
+
+* ======================= P R E P E N D  ========================= *
+
+
+- Similar to append(), but it adds elements or text at the beginning of the parent element.
+
+
+- Sometimes you want to add a new part to the beginning of your robot.
+- prepend() helps with that.
+- It's like saying, "Put this new part at the front of the robot."
+
+
+
+// Syntax
+parentElement.prepend(newChild1, newChild2, ...);
+
+// Parameters
+// 'newChild1', 'newChild2', ...: The elements or text nodes you want to prepend to the 'parentElement'.
+
+
+
+EXAMPLE:
+
+const parentElement = document.getElementById('parent');
+parentElement.prepend(newDiv, "Some text");
+
+
+* ======================= I N S E R T - B E F O R E  ========================= *
+
+
+- This method is used to insert a new node before a specified existing
+     child node within a parent node.
+
+
+- Imagine your robot already has parts, and you want to add a new one between two existing parts.
+- insertBefore() is like saying, "Insert this new part before that existing part."
+
+
+
+// Syntax
+parentElement.insertBefore(newNode, referenceNode);
+
+// Parameters
+// 'newNode': The element you want to insert.
+// 'referenceNode': The existing child element before which 'newNode' will be inserted.
+
+
+
+EXAMPLE:
+
+const existingChild = document.getElementById('existingChild');
+parentElement.insertBefore(newDiv, existingChild);
+
+
+
+
+* ======================= I N S E R T - A D J A C E N T - E L E M E N T ========================= *
+
+
+- This method allows you to insert an element adjacent to the targeted element based on the position specified.
+
+
+- If you want to be even more specific about where to add a part,
+     you can use insertAdjacentElement().
+- It's like saying, "Put this new part right before the existing part."
+
+
+
+// Syntax
+existingElement.insertAdjacentElement(position, newElement);
+
+// Parameters
+// 'position': Where to insert the new element. It can be one of the following values:
+//   - 'beforebegin': Before the existing element.
+//   - 'afterbegin': Inside the existing element, at the beginning.
+//   - 'beforeend': Inside the existing element, at the end.
+//   - 'afterend': After the existing element.
+// 'newElement': The element you want to insert.
+
+
+
+EXAMPLE:
+
+existingChild.insertAdjacentElement('beforebegin', newDiv);
+
+
+
+
+* ======================= R E M O V E - C H I L D ========================= *
+
+- This method removes a specified child node from the DOM.
+
+- Now, let's say you want to remove a part from your robot.
+- removeChild() is like saying, "Take off this specific part."
+
+
+
+// Syntax
+parentElement.removeChild(childToRemove);
+
+// Parameters
+// 'childToRemove': The child element you want to remove from 'parentElement'.
+
+
+
+EXAMPLE:
+
+const parentElement = document.getElementById('parent');
+const childToRemove = document.getElementById('childToRemove');
+parentElement.removeChild(childToRemove);
+
+
+
+* ======================= R E M O V E  ========================= *
+
+- The remove() method is used to remove the current node from the DOM.
+
+- If you want to remove a part directly, without specifying the parent,
+     you can use remove().
+- It's like saying, "Get rid of this part."
+
+
+
+// Syntax
+elementToRemove.remove();
+
+// Parameters
+// None. This method doesn't take any parameters; it removes the element it's called on.
+
+
+
+EXAMPLE:
+
+const elementToRemove = document.getElementById('elementToRemove');
+elementToRemove.remove();
