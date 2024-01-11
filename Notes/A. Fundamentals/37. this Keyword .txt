@@ -1,0 +1,128 @@
+
+* ============== THIS - K E Y W O R D ============= *
+
+
+- "this" keyword in JavaScript is crucial as it plays a significant role in determining
+     the context in which a function is executed.
+     
+- Let's break down the concept of "this" step by step.
+
+
+
+
+---------- What is "this"?
+
+- In JavaScript, "this" is a special keyword that refers to the object it belongs to.
+- It is not a fixed value and can change based on how a function is called.
+- The value of "this" is determined by the execution context and how a function is invoked.
+
+
+
+
+---------- Default Binding:
+
+- When a function is invoked in the global scope (not inside any object or specific context),
+     "this" refers to the global object, which is usually the `window` object
+     in a browser environment.
+
+
+
+```javascript
+function showThis() {
+  console.log(this);
+}
+
+showThis(); // 'this' refers to the global object (window in a browser)
+```
+
+
+
+
+---------- Implicit Binding
+
+- When a function is a method of an object, "this" refers to the object the method is called on.
+
+
+```javascript
+const person = {
+  name: 'John',
+  sayHello: function() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+person.sayHello(); // 'this' refers to the 'person' object
+```
+
+
+
+
+
+
+---------- Explicit Binding
+
+- JavaScript provides methods like `call()`, `apply()`, and `bind()`
+     to explicitly set the value of "this" in a function.
+
+
+
+### Using `call()` and `apply()`
+
+```javascript
+function introduce(greeting) {
+  console.log(`${greeting}, my name is ${this.name}`);
+}
+
+const john = { name: 'John' };
+const jane = { name: 'Jane' };
+
+introduce.call(john, 'Hi'); // 'this' refers to the 'john' object
+introduce.apply(jane, ['Hello']); // 'this' refers to the 'jane' object
+```
+
+
+
+
+### Using `bind()`
+
+- The `bind()` method creates a new function with a specified "this" value and returns it,
+     without invoking the original function.
+
+
+
+```javascript
+const johnIntro = introduce.bind(john);
+johnIntro('Hola'); // 'this' refers to the 'john' object
+```
+
+
+
+
+
+---------- Arrow Functions ( I M P O R T A N T )
+
+- Arrow functions behave differently when it comes to "this".
+- They don't have their own "this" binding and inherit the "this" value from the enclosing scope.
+
+
+```javascript
+const person = {
+  name: 'John',
+  sayHello: function() {
+    setTimeout(() => {
+      console.log(`Hello, my name is ${this.name}`);
+    }, 1000);
+  }
+};
+
+person.sayHello(); // 'this' refers to the 'person' object
+```
+
+
+
+
+
+- Understanding the "this" keyword is essential for writing effective and flexible JavaScript code.
+- Remember that "this" is dynamic and its value depends on how a function is invoked.
+- Practice using different scenarios and binding methods to solidify your understanding
+     of this fundamental concept in JavaScript.
