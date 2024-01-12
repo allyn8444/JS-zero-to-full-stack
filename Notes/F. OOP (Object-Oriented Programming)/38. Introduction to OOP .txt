@@ -1,0 +1,158 @@
+
+*======================= I N T R O - T O - O O P =======================*
+
+
+
+- Object-Oriented Programming (OOP) is a programming "language model" or style
+     organized around objects rather than "actions" and data rather than logic.
+
+
+- so JS is not purely a Object Oriented language.
+- JS is a versatile and dynamic programming language that supports multiple paradigms/model.
+     Including procedural, functional, and object-oriented programming.
+
+
+
+OOP in JS
+
+it refers to the practice of designing and structuring code around Objects and their interactions.
+It is a programming model that allows developers to model real-world entities and their relationship using
+Objects and Classes.
+
+
+
+*======================= S T A R T E R =======================*
+
+
+
+1. What is OOP?
+   - Object-Oriented Programming (OOP) is a way of writing code that helps us
+     organize and structure our programs.
+
+   - Instead of thinking about our program as a series of tasks to complete,we think
+     about it as a collection of objects that interact with each other.
+
+
+
+2. Objects:    ---------------------------------------------------------------------
+
+   - Think of objects as things or entities in your program.
+   - These things can have both data (like characteristics) called attributes
+     and actions (like what they can do) called methods.
+
+
+EXAMPLE:
+
+   ```javascript
+   // Example of an object representing a car
+
+
+   let car = {
+       color: 'red',
+       model: 'sedan',
+       speed: 0,
+       accelerate: function() {
+           this.speed += 10;
+           console.log("Vroom! Current speed: " + this.speed);
+       }
+   };
+
+
+   ```
+
+
+
+
+3. Classes:    ---------------------------------------------------------------------
+
+   - A class is like a blueprint for creating objects.
+   - It defines what kind of data and actions an object of that type can have.
+
+
+EXAMPLE:
+
+   ```javascript
+   // Example of a class representing a car
+
+
+   class Car {
+       constructor(color, model) {
+           this.color = color;
+           this.model = model;
+           this.speed = 0;
+       }
+
+       accelerate() {
+           this.speed += 10;
+           console.log("Vroom! Current speed: " + this.speed);
+       }
+   }
+
+
+   // Creating an object (instance) from the class
+   let myCar = new Car('blue', 'sedan');
+
+
+   ```
+
+
+
+
+4. Getter and Setter Methods:   ---------------------------------------------------------------------
+
+   - These are like little helpers that get and set values in your objects.
+   - They ensure that you change and access data in a controlled way.
+
+
+EXAMPLE:
+
+
+```javascript
+
+
+   class Car {
+       constructor(color, model) {
+           this.color = color;
+           this.model = model;
+           this.speed = 0;
+       }
+
+       accelerate() {
+           this.speed += 10;
+           console.log("Vroom! Current speed: " + this.speed);
+       }
+
+       // Getter method
+       getColor() {
+           return this.color;
+       }
+
+       // Setter method
+       setColor(newColor) {
+           this.color = newColor;
+       }
+   }
+
+
+```
+
+
+
+more.......
+
+
+OOP's key concepts are:  (A-PIE)
+1. Abstraction
+2. Polymorphism
+3. Inheritance
+4. Encapsulation
+
+
+MORE ON IT LATER
+
+
+
+- In summary, OOP is a way of writing code that mimics how we think about things in the real world.
+- It makes our code more organized, easier to understand, and reusable.
+- As you go on, you'll get more comfortable with these concepts and see how they
+     make your programming life easier!
