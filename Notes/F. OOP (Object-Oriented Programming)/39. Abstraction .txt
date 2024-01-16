@@ -1,0 +1,100 @@
+
+*======================= A B S T R A C T I O N =======================*
+
+
+What is Abstraction?
+   - Abstraction is like looking at a complex system and focusing only on the essential
+     details while ignoring unnecessary complexities.
+
+
+Example:
+   - Imagine you're driving a car.
+     You don't need to understand how the engine works internally.
+     You just use the steering wheel, brakes, and accelerator.
+     
+   - In this case, the car provides an ABSTRACTION of its internal workings.
+
+
+Where to use:
+   - Use abstraction when creating classes to hide the complex implementation details
+     from users of the class, exposing only what's necessary.
+
+
+Best Practices:
+   - Define clear and simple interfaces for your classes, highlighting only
+     the most important functionalities.
+
+   - Hide internal implementation details that are not relevant to users of the class.
+
+
+
+
+
+EXAMPLE:
+
+
+// Define a BankAccount class using a constructor function
+
+function BankAccount(accountHolder, initialBalance) {
+
+  // Attributes
+  this.accountHolder = accountHolder;
+  this.balance = initialBalance;
+
+
+  // Method: Deposit funds
+  this.deposit = function(amount) {
+
+    // Assume a simplified deposit process
+    this.balance += amount;
+    console.log(`Deposited $${amount}. New balance: $${this.balance}`);
+  };
+
+
+  // Method: Withdraw funds
+  this.withdraw = function(amount) {
+
+    // Assume a simplified withdrawal process
+    if (amount <= this.balance) {
+      this.balance -= amount;
+      console.log(`Withdrawn $${amount}. New balance: $${this.balance}`);
+    } else {
+      console.log("Insufficient funds!");
+    }
+  };
+
+  // Method: Get account balance
+  this.getBalance = function() {
+    console.log(`Account balance for ${this.accountHolder}: $${this.balance}`);
+  };
+}
+
+// Create an instance of the BankAccount class
+const myAccount = new BankAccount('John Doe', 1000);
+
+// Use the abstraction to interact with the BankAccount object
+myAccount.deposit(500);    // Output: Deposited $500. New balance: $1500
+myAccount.withdraw(200);   // Output: Withdrawn $200. New balance: $1300
+myAccount.getBalance();    // Output: Account balance for John Doe: $1300
+
+
+
+
+
+EXPLANATION:
+
+
+- Attributes (accountHolder and balance):
+     These represent the essential properties of a bank account.
+
+- Methods (deposit, withdraw, and getBalance):
+     These represent the essential operations that a user might perform on a bank account.
+
+- The abstraction here lies in the fact that as a user of the BankAccount class,
+     you don't need to understand the intricate details of how deposits
+     and withdrawals are processed internally.
+- You only need to interact with the provided methods (deposit, withdraw, and getBalance) to manage your bank account.
+
+- This abstraction makes it easier for developers to use the BankAccount class without being
+     concerned about the underlying implementation details,
+     promoting a cleaner and more maintainable codebase.
