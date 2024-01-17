@@ -1,0 +1,100 @@
+
+*======================= P O L Y M O R P H I S M =======================*
+
+What is Polymorphism?
+   - Polymorphism means that objects of different types can be treated as objects of a common base type.
+
+   - in simple terms, means that different objects can be treated as if they are the same type when they
+          share a common interface or a common set of methods.
+   - This allows you to use a single interface to represent various types of objects.
+
+   - "Poly" means many, and "morph" means form. So, polymorphism is about having many forms.
+
+
+
+Example:
+   - Think of a `Shape` class with a method `calculateArea()`.
+   - You can have different shapes (like circles and rectangles) that inherit from this
+     class and provide their own implementation of `calculateArea()`.
+
+
+
+Where to use:
+   - Use polymorphism when you want to write code that works with objects of different types in a unified way.
+
+
+Best Practices:
+   - Design your base class or interface with methods that are common to all derived classes.
+   - Allow derived classes to OVERRIDE these methods with their specific implementations.
+
+
+
+EXAMPLE:
+
+
+
+```javascript
+
+
+// Base class representing a shape
+class Shape {
+  constructor() {
+    this.type = "Shape";
+  }
+
+  // Method to calculate the area, to be overridden by derived classes
+  calculateArea() {
+    return 0;
+  }
+}
+
+// Derived class representing a circle
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.type = "Circle";
+    this.radius = radius;
+  }
+
+  calculateArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+// Derived class representing a rectangle
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.type = "Rectangle";
+    this.width = width;
+    this.height = height;
+  }
+
+  calculateArea() {
+    return this.width * this.height;
+  }
+}
+
+// Function that uses polymorphism with the Shape base class
+function printArea(shape) {
+  console.log(`Type: ${shape.type}, Area: ${shape.calculateArea()}`);
+}
+
+// Creating instances of different shapes
+const circle = new Circle(5);
+const rectangle = new Rectangle(4, 6);
+
+// Using polymorphism to print the area of different shapes
+printArea(circle);     // Output: Type: Circle, Area: 78.53981633974483
+printArea(rectangle);  // Output: Type: Rectangle, Area: 24
+
+
+```
+
+In this example,
+
+- the `Shape` class is a base class with a method `calculateArea()` that is meant to be
+     overridden by derived classes.
+
+- The `Circle` and `Rectangle` classes extend the `Shape` class and provide their own implementations of `calculateArea()`.
+- The `printArea` function takes a `Shape` as an argument and calls `calculateArea()` on it, demonstrating polymorphism.
