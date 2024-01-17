@@ -1,0 +1,69 @@
+
+
+THIS IS AN EXPLANATION ABOUT super() METHOD THAT IS USED IN LESSON 40. Polymorphism
+
+
+
+- `super()` is used to call the constructor of the parent (or super) class.
+
+- In the provided example:
+
+
+```javascript
+
+class Shape {
+  constructor() {
+    this.type = "Shape";
+  }
+
+  // Method to calculate the area, to be overridden by derived classes
+  calculateArea() {
+    return 0;
+  }
+}
+
+class Circle extends Shape {
+  constructor(radius) {
+    // Call the constructor of the parent class (Shape)
+    super();
+
+    this.type = "Circle";
+    this.radius = radius;
+  }
+
+  calculateArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(width, height) {
+    // Call the constructor of the parent class (Shape)
+    super();
+
+    this.type = "Rectangle";
+    this.width = width;
+    this.height = height;
+  }
+
+  calculateArea() {
+    return this.width * this.height;
+  }
+}
+
+```
+
+
+
+- In the `Circle` and `Rectangle` classes, `super()` is used to invoke the constructor of the `Shape` class.
+
+- This ensures that the `type` property of the `Shape` class is initialized when creating instances of `Circle`
+     and `Rectangle`.
+
+- If `super()` were not called, the `type` property from the `Shape` class would not be set in the derived classes,
+     and you would lose the information about the type of the shape when using polymorphism later in the code.
+
+In summary,
+- `super()` is used to call the constructor of the parent class and is typically placed at the beginning of
+     the constructor of the derived class to ensure that the
+     initialization code from the parent class is executed.
