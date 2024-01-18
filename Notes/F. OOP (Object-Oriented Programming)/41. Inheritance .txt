@@ -1,0 +1,128 @@
+*======================= I N H E R I TA N C E =======================*
+
+What is Inheritance?
+   - Inheritance allows a new class to inherit properties and behaviors from an existing class.
+   - It promotes code reuse and helps in creating a hierarchy of classes.
+   - we are using `extends` keyword
+
+
+Example:
+   - Consider a `Vehicle` class.
+   - You can create more specific classes like `Car` and `Motorcycle` that inherit properties and
+          behaviors from the base `Vehicle` class.
+
+
+```javascript
+
+class Vehicle {
+    constructor(color, model) {
+        this.color = color;
+        this.model = model;
+    }
+
+    start() {
+        console.log("Engine started");
+    }
+}
+
+class Car extends Vehicle {
+    // Additional properties and methods specific to cars
+}
+
+class Motorcycle extends Vehicle {
+    // Additional properties and methods specific to motorcycles
+}
+
+```
+
+
+
+Where to use:
+   - Use inheritance when you have a general class that can be extended to create more
+     specific classes with additional features.
+
+
+Best Practices:
+   - Identify common properties and behaviors in your classes to form a solid base class.
+   - Ensure that the relationship between the base class and derived classes makes sense in terms of "is-a" relationships.
+
+
+
+
+ANOTHER EXAMPLE:
+
+
+
+```javascript
+
+
+// Base class representing an Employee
+class Employee {
+  constructor(name, id) {
+    this.name = name;
+    this.id = id;
+    this.type = "Employee";
+  }
+
+  // Common method for all employees
+  introduce() {
+    console.log(`Hello, my name is ${this.name} and I am an ${this.type}.`);
+  }
+}
+
+// Subclass representing a Developer
+class Developer extends Employee {
+  constructor(name, id, programmingLanguage) {
+    // Call the constructor of the parent class (Employee)
+    super(name, id);
+    this.type = "Developer";
+    this.programmingLanguage = programmingLanguage;
+  }
+
+  // Additional method specific to developers
+  code() {
+    console.log(`${this.name} is coding in ${this.programmingLanguage}.`);
+  }
+}
+
+// Subclass representing a Manager
+class Manager extends Employee {
+  constructor(name, id, department) {
+    // Call the constructor of the parent class (Employee)
+    super(name, id);
+    this.type = "Manager";
+    this.department = department;
+  }
+
+  // Additional method specific to managers
+  organizeTeam() {
+    console.log(`${this.name} is organizing the ${this.department} team.`);
+  }
+}
+
+// Creating instances of the classes
+const genericEmployee = new Employee("John Doe", 1);
+const jsDeveloper = new Developer("Alice Smith", 2, "JavaScript");
+const projectManager = new Manager("Bob Johnson", 3, "Software Development");
+
+// Using inherited methods
+genericEmployee.introduce();    // Output: Hello, my name is John Doe and I am an Employee.
+jsDeveloper.introduce();        // Output: Hello, my name is Alice Smith and I am a Developer.
+jsDeveloper.code();             // Output: Alice Smith is coding in JavaScript.
+projectManager.introduce();     // Output: Hello, my name is Bob Johnson and I am a Manager.
+projectManager.organizeTeam();  // Output: Bob Johnson is organizing the Software Development team.
+
+
+
+```
+
+
+EXPLANATION:
+
+- We have an `Employee` base class with a common `introduce` method.
+- We then have two subclasses, `Developer` and `Manager`, that extend the `Employee` class.
+- Each subclass has its own specific properties and methods, such as `programmingLanguage`
+     and `code` for developers, and `department` and `organizeTeam` for managers.
+
+- Instances of these classes demonstrate the use of inheritance, allowing us to create objects with shared
+     and specialized behaviors based on their roles in the company.
