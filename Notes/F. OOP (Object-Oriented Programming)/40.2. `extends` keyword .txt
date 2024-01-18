@@ -1,0 +1,54 @@
+
+- In JavaScript, the `extends` keyword is used to create a subclass that INHERITS from a superclass.
+- It is part of the class syntax introduced in ECMAScript 2015 (ES6) to provide a more
+     convenient and structured way of implementing inheritance.
+
+
+- Here's a basic example to illustrate the use of `extends`:
+
+
+```javascript
+
+
+// Superclass (or parent class)
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Subclass (or child class) that extends Animal
+class Dog extends Animal {
+  // Additional properties or methods specific to Dog can be defined here
+
+  // Overriding the speak method from the superclass
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+// Creating instances of the classes
+const genericAnimal = new Animal("Generic Animal");
+const dog = new Dog("Buddy");
+
+// Calling methods on instances
+genericAnimal.speak();  // Output: Generic Animal makes a sound.
+dog.speak();            // Output: Buddy barks.
+
+
+```
+
+In this example,
+
+- `class Dog extends Animal` signifies that the `Dog` class is inheriting from the `Animal` class.
+- The `Dog` class not only has its own properties and methods but also inherits the properties and
+     methods of the `Animal` class. The `super()` keyword is used within the `Dog` class
+     constructor to call the constructor of the `Animal` class.
+
+
+- By using `extends`, you can establish a hierarchical relationship between classes, allowing for code reuse
+     and creating more organized and maintainable code structures.
