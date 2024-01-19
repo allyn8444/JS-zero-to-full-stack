@@ -1,0 +1,175 @@
+
+*======================= E N C A P S U L A T I O N =======================*
+
+
+
+
+What is Encapsulation?
+   - Encapsulation involves bundling the data (attributes) and methods that operate on the data
+     into a single unit called a class.
+
+   - It helps in hiding the internal details of the object.
+
+
+IMPORTANT!
+
+- JavaScript relies on encapsulation through closures and SCOPING rather than explicit access modifiers.
+
+
+
+Example:
+   - Think of a `Person` class with private attributes like `name` and `age`.
+   The internal details are hidden, and you provide methods like `getName()` and `getAge()` to access these attributes.
+
+
+```javascript
+
+class Person {
+    constructor(name, age) {
+        // Private attributes
+        let _name = name;
+        let _age = age;
+
+        // Getter methods
+        this.getName = function() {
+            return _name;
+        };
+
+        this.getAge = function() {
+            return _age;
+        };
+    }
+}
+
+```
+
+
+
+Where to use:
+   - Use encapsulation to control access to the internal details of an object, preventing accidental modifications.
+
+
+Best Practices:
+   - Make attributes private or protected whenever possible.
+   - Provide getter and setter methods to control access to the internal state.
+
+
+
+More Info:
+- Private members are usually prefixed with an underscore (_), indicating that they should not be
+     accessed from outside the class.
+
+- However, this is more of a convention, and the properties are still technically accessible.
+
+Note: The use of _ is a convention, and it does not enforce true privacy.
+It signals to other developers that the property or method is intended to be private, but it can still be accessed.
+
+
+
+EXAMPLE:
+
+
+class EncapsulatedExample {
+  constructor() {
+    let _privateVariable = "I am private";
+
+    this.getPrivateVariable = function () {
+      return _privateVariable;
+    };
+  }
+}
+
+const encapsulatedInstance = new EncapsulatedExample();
+console.log(encapsulatedInstance._privateVariable); // Undefined (not accessible)
+console.log(encapsulatedInstance.getPrivateVariable());
+// ^^  Accessing private variable through a method (usually using setter and getter methods)
+
+
+
+
+
+
+
+
+ANOTHER EXAMPLE:
+
+
+```javascript
+
+
+class BankAccount {
+  constructor(accountHolder, initialBalance) {
+
+    // Private variables
+    let accountHolderName = accountHolder;
+    let balance = initialBalance || 0;
+
+    // Private method to check if the withdrawal amount is valid
+    function isValidWithdrawal(amount) {
+      return amount > 0 && amount <= balance;
+    }
+
+    // Public method to get the account holder's name
+    this.getAccountHolderName = function () {
+      return accountHolderName;
+    };
+
+    // Public method to get the account balance
+    this.getBalance = function () {
+      return balance;
+    };
+
+    // Public method to deposit money
+    this.deposit = function (amount) {
+      if (amount > 0) {
+        balance += amount;
+        console.log(`Deposited $${amount}. New balance: $${balance}`);
+      } else {
+        console.log("Invalid deposit amount.");
+      }
+    };
+
+    // Public method to withdraw money
+    this.withdraw = function (amount) {
+      if (isValidWithdrawal(amount)) {
+        balance -= amount;
+        console.log(`Withdrawn $${amount}. New balance: $${balance}`);
+      } else {
+        console.log("Invalid withdrawal amount or insufficient funds.");
+      }
+    };
+  }
+}
+
+// Creating an instance of the BankAccount class
+const myAccount = new BankAccount("John Doe", 1000);
+
+// Accessing public methods to interact with the encapsulated data
+console.log(`Account Holder: ${myAccount.getAccountHolderName()}`); // a getter method
+console.log(`Initial Balance: $${myAccount.getBalance()}`); // a getter method also
+
+myAccount.deposit(500);
+myAccount.withdraw(200);
+myAccount.withdraw(1000); // Invalid withdrawal amount or insufficient funds.
+
+console.log(`Final Balance: $${myAccount.getBalance()}`);
+
+```
+
+In this example:
+
+- The `BankAccount` class encapsulates the `accountHolderName` and `balance` as private variables.
+
+- Public methods (`getAccountHolderName`, `getBalance`, `deposit`, `withdraw`) are provided to
+     interact with the encapsulated data securely.
+
+- The `isValidWithdrawal` function is a private helper method, encapsulated within the constructor,
+     ensuring that the logic for checking valid withdrawals is hidden from external code.
+
+
+
+
+- This encapsulation ensures that the internal state of the `BankAccount` object is controlled and can only be
+     accessed or modified through the specified public methods.
+
+- It enhances security and allows for better control over the integrity of the object's data.
