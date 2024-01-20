@@ -1,0 +1,152 @@
+
+
+*======================= P R O T O T Y P E S =======================*
+
+
+
+- In JavaScript, each object has a prototype.
+- A prototype is an object from which other objects inherit properties.
+- Think of it as a blueprint or a template that defines common properties and methods for a certain type of object.
+- In a sense, it is like the PARENT of your object.
+
+
+
+---------------------- Object Prototypes ---------------------
+
+
+- All JavaScript objects, including functions and arrays, have prototypes.
+- The prototype object is shared among all instances of a particular type
+     and is accessible via the `prototype` property.
+
+
+```javascript
+
+// Example with an object literal
+let myObject = {};
+console.log(Object.getPrototypeOf(myObject)); // Outputs: Object {}
+
+// Example with a constructor function
+function Person(name) {
+  this.name = name;
+}
+
+let person1 = new Person('John');
+
+console.log(Object.getPrototypeOf(person1)); // Outputs: Person {}
+
+
+```
+
+
+
+
+
+
+------------------- Constructor Functions and Prototypes -------------------
+
+
+
+- Constructor functions are used to create objects with a specific structure.
+- Each instance created by a constructor function INHERITS properties and methods
+     from the constructor's prototype.
+
+
+```javascript
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.bark = function() {
+  console.log(`${this.name} says Woof!`);
+};
+
+let myDog = new Dog('Buddy');
+myDog.bark(); // Outputs: Buddy says Woof!
+
+
+```
+
+
+
+------------------- Prototype Chain -------------------
+
+- Objects in JavaScript are linked to a prototype chain.
+- If a property or method is not found on the object itself, JavaScript looks up the chain until it
+     finds the property or until it reaches the end of the chain (where the prototype is `null`).
+
+
+
+```javascript
+
+
+// Adding a method to the Object prototype
+Object.prototype.greet = function() {
+  console.log('Hello!');
+};
+
+myObject.greet(); // Outputs: Hello!
+
+
+```
+
+
+
+
+------------------- `Object.create()` -------------------
+
+
+- The `Object.create()` method allows you to create a new object with a specified prototype object.
+
+
+```javascript
+
+let parent = {
+  sayHi: function() {
+    console.log('Hi!');
+  }
+};
+
+let child = Object.create(parent);
+child.sayHi(); // Outputs: Hi!
+
+```
+
+
+
+
+------------------- `hasOwnProperty()` Method -------------------
+
+To check if a property belongs to an object itself (not inherited), you can use the `hasOwnProperty()` method.
+
+```javascript
+console.log(myObject.hasOwnProperty('name')); // Outputs: true
+console.log(myObject.hasOwnProperty('bark')); // Outputs: false
+```
+
+
+
+
+
+-------------------  Best Practices -------------------
+
+
+- Reuse Code:
+     By using prototypes, common methods are defined once in the prototype
+     and shared among all instances, reducing code duplication.
+
+- Efficiency:
+     Prototypes allow for efficient memory usage since methods are
+     shared rather than duplicated for each instance.
+
+- Inheritance:
+     Prototype-based inheritance helps to organize and structure code, making it easier to extend and maintain.
+
+- Flexibility:
+     You can easily add or modify methods in the prototypes, affecting all instances.
+
+- Consistency:
+     Prototypes help maintain a consistent interface for objects of the same type.
+
+
+
