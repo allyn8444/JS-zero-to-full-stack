@@ -227,5 +227,75 @@ echo "<br>";
 
 
 // Lower Case: The strtolower() function returns the string in lower case:
-$x = "Hello World!";
+$x = "String To Lower! <br>";
 echo strtolower($x);
+
+
+// Replace String:
+// The PHP str_replace() function replaces some characters with some other characters in a string.
+$x = "String Replace: World!";
+$s = str_replace("World", "Dolly", $x);
+echo " $s <br>" ;
+
+/*
+   syntax: str_replace(a, b, ,c)
+
+   a = string to be replaced
+   b = new value of string
+   c = reference variable (where nakasulod ang value nga i-replace)
+   
+*/
+
+
+// Reverse a String: The PHP strrev() function reverses a string.
+$x = "Reverse String";
+echo strrev($x);
+
+echo "<br>";
+
+
+/*
+   Remove Whitespace
+   Whitespace is the space before and/or after the actual text,
+      and very often you want to remove this space.
+*/
+$x = " Remove Whitespace <br> ";
+echo trim($x);
+
+/*
+   Convert String into Array
+   The PHP explode() function splits a string into an array.
+
+   The first parameter of the explode() function represents the "separator".
+   The "separator" specifies where to split the string.
+
+*/
+
+echo "<br> Turn String into Array <br>";
+$x = "Hello World!";
+$y = explode(" ", $x);
+
+//Use the print_r() function to display the result:
+print_r($y);
+echo "<br>";
+
+
+
+/*
+
+   Slicing
+   You can return a range of characters by using the substr() function.
+   Specify the start index and the number of characters you want to return.
+
+   syntax:
+   substr(string, index_start, slice_how_many_char)
+
+   Example:
+   Start the slice at index 6 and end the slice 5 positions later:
+*/
+$x = "String Slicing";
+echo substr($x, 6, 5);
+echo "<br>";
+
+
+
